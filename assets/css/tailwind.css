@@ -62,8 +62,9 @@
  * @import "utilities/skew-transforms";
  */
 
-.nuxt-link-exact-active,
-.nuxt-link-exact-active:hover {
+/* purgecss start ignore */
+.navbar a.nuxt-link-exact-active,
+.navbar a.nuxt-link-exact-active:hover {
   @apply .border-b-2 .border-purple;
 }
 
@@ -73,3 +74,8 @@
 .page-enter, .page-leave-active {
   opacity: 0
 }
+/* purgecss end ignore */
+
+ /* purgecss start ignore */
+
+ /* purgecss end ignore */
