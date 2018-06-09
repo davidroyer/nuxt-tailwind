@@ -9,6 +9,7 @@
 <script>
 import NavLink from "./NavLink.vue";
 export default {
+  name: 'NavLinks',
   components: {
     NavLink
   },

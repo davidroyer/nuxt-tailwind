@@ -13,5 +13,11 @@
                 <li><a href="#">Hello</a></li>
             </ul>
         </div>
-    </div>    
+    </div>
 </template>
+
+<script>
+  export default {
+    name: 'SideBar'
+  };
+</script>

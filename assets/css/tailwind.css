@@ -28,7 +28,13 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+ .navbar {
+   @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;
+ }
 
+ .navbar a {
+   @apply .font-bold .uppercase .text-grey-dark .py-2 .tracking-wide .text-sm .no-underline .border-b-2 .border-transparent;
+ }
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -59,4 +65,11 @@
 .nuxt-link-exact-active,
 .nuxt-link-exact-active:hover {
   @apply .border-b-2 .border-purple;
+}
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .5s
+}
+.page-enter, .page-leave-active {
+  opacity: 0
 }

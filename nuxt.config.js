@@ -68,5 +68,8 @@ module.exports = {
       }
     }
   },
-  css: ["~/assets/css/tailwind.css"]
+  css: [
+    "~/assets/css/tailwind.css",
+    "~/assets/scss/main.scss",
+  ]
 };

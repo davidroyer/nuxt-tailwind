@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-between items-center p-4 border-b border-grey-lightest">
+    <div class="navbar">
       <logo></logo>
       <nav-links :links="links"></nav-links>
     </div>
@@ -10,6 +10,7 @@ import NavLinks from "./NavLinks";
 import Logo from "./Logo";
 
 export default {
+  name: 'NavBar',
   components: {
     NavLinks,
     Logo
