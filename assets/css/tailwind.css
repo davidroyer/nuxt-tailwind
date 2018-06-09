@@ -62,20 +62,14 @@
  * @import "utilities/skew-transforms";
  */
 
-/* purgecss start ignore */
-.navbar a.nuxt-link-exact-active,
-.navbar a.nuxt-link-exact-active:hover {
-  @apply .border-b-2 .border-purple;
-}
+ .navbar a.nuxt-link-exact-active,
+ .navbar a.nuxt-link-exact-active:hover {
+   @apply .border-b-2 .border-purple;
+ }
 
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s
-}
-.page-enter, .page-leave-active {
-  opacity: 0
-}
-/* purgecss end ignore */
-
- /* purgecss start ignore */
-
- /* purgecss end ignore */
+ .page-enter-active, .page-leave-active {
+   transition: opacity .5s
+ }
+ .page-enter, .page-leave-active {
+   opacity: 0
+ }
