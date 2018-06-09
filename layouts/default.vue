@@ -8,12 +8,12 @@
 
 <script>
 import NavBar from '@/components/NavBar';
-import Sidebar from '@/components/Sidebar';
+// import Sidebar from '@/components/Sidebar';
 
 export default {
   components: {
-    NavBar,
-    Sidebar
+    NavBar
+    // Sidebar
   }
 };
 </script>
