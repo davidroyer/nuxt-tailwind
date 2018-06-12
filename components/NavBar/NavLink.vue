@@ -1,9 +1,7 @@
 <template>
-    <li class="block px-4">
-        <nuxt-link
-            :to="to"
-            class="nav-link hover:border-grey">{{ name }}</nuxt-link>
-    </li>
+  <li class="nav-item">
+    <nuxt-link :to="to" class="nav-link hover:border-grey">{{ name }}</nuxt-link>
+  </li>
 </template>
 
 <script>

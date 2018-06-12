@@ -1,0 +1,53 @@
+.navbar {
+  height: 80px;
+  @apply .flex .justify-between .items-center .p-4 .border-b .border-grey-lightest;
+}
+
+.nav {
+  @apply .flex .flex-col .justify-start .list-reset;
+  @media (max-width: 767px) {
+    position: absolute;
+    top: 80px;
+    background: gray;
+    left: 0;
+    right: 0;
+    height: calc(100vh - 80px);
+
+    &-item {
+      margin: 0.5rem 0;
+      @apply .block .px-4;
+    }
+
+    a {
+      @apply .text-white .block;
+    }
+  }
+
+  a {
+    @apply .font-bold .uppercase .py-2 .tracking-wide .text-sm .no-underline .border-b-2 .border-transparent;
+
+    &.nuxt-link-exact-active,
+    &.nuxt-link-exact-active:hover {
+      @apply .border-b-2 .border-white;
+    }
+  }
+}
+
+
+@screen md {
+  .nav {
+    @apply .flex-row .justify-end .bg-transparent;
+
+    &-item {
+      @apply .block .px-4;
+    }
+    a {
+      @apply .text-grey-dark;
+
+      &.nuxt-link-exact-active,
+      &.nuxt-link-exact-active:hover {
+        @apply .border-purple;
+      }
+    }
+  }
+}

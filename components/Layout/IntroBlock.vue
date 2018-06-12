@@ -1,8 +1,10 @@
 <template>
-    <div>
-        <headline :tag="tag">{{ text }}</headline>
-        <p class="text-grey-dark"><slot></slot></p>
-    </div>
+  <div>
+    <headline :tag="tag">{{ text }}</headline>
+    <p class="text-grey-dark">
+      <slot></slot>
+    </p>
+  </div>
 </template>
 
 <script>

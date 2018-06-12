@@ -90,7 +90,10 @@ module.exports = {
     }
   },
   css: [
-    "~/assets/css/tailwind.css",
     "~/assets/scss/main.scss",
-  ]
+  ],
+
+  router: {
+    middleware: ['menu']
+  }
 };
