@@ -3,10 +3,13 @@
       <logo></logo>
       <button
         @click="$store.commit('toggleMenuState')"
-        class="nav-btn btn btn-blue md:hidden">
+        class="nav-btn"
+        :class="{'text-white font-bold': $store.state.menuIsActive}">
         Menu
       </button>
-      <nav-links v-if="showMenu" :links="links"></nav-links>
+      <transition name="slide-fade">
+        <nav-links v-if="showMenu" :links="links"></nav-links>
+      </transition>
     </div>
 </template>
 
@@ -20,17 +23,16 @@ export default {
     NavLinks,
     Logo
   },
-  data() {
-    return {
-      links: [
-        { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
-        { name: "Styleguide", path: "/styleguide" }
-      ],
-      windowWidth: 0,
-      windowHeight: 0
-    };
-  },
+  
+  data: () => ({
+    links: [
+      { name: "Home", path: "/" },
+      { name: "About", path: "/about" },
+      { name: "Styleguide", path: "/styleguide" }
+    ],
+    windowWidth: 0,
+    windowHeight: 0
+  }),
 
   computed: {
     isMobile() {
@@ -55,15 +57,23 @@ export default {
     })
   },
 
+
+  watch: {
+    windowWidth: function (newWidth, oldWidth) {
+     if (newWidth < 768) console.log('mobile')
+    }
+  },
+
   methods: {
     getWindowWidth(event) {
-        this.windowWidth = document.documentElement.clientWidth;
-      },
+      this.windowWidth = document.documentElement.clientWidth;
+    },
 
-      getWindowHeight(event) {
-        this.windowHeight = document.documentElement.clientHeight;
-      }
+    getWindowHeight(event) {
+      this.windowHeight = document.documentElement.clientHeight;
+    }
   },
+
   beforeDestroy() {
     window.removeEventListener('resize', this.getWindowWidth);
     window.removeEventListener('resize', this.getWindowHeight);

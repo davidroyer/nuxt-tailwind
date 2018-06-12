@@ -5,22 +5,10 @@
 
 .nav {
   @apply .flex .flex-col .justify-start .list-reset;
-  @media (max-width: 767px) {
-    position: absolute;
-    top: 80px;
-    background: gray;
-    left: 0;
-    right: 0;
-    height: calc(100vh - 80px);
 
-    &-item {
-      margin: 0.5rem 0;
-      @apply .block .px-4;
-    }
-
-    a {
-      @apply .text-white .block;
-    }
+  &-btn {
+    z-index: 999;
+    @apply .text-purple-dark .font-extrabold;
   }
 
   a {
@@ -28,19 +16,45 @@
 
     &.nuxt-link-exact-active,
     &.nuxt-link-exact-active:hover {
-      @apply .border-b-2 .border-white;
+      border-color: #673AB7;
+      border-bottom-width: 3px;
+      @apply .font-medium;
+    }
+  }
+  @media (max-width: 767px) {
+    position: absolute;
+    background: #2b2b2b;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    padding-top: 100px;
+
+    &-item {
+      margin: 0.5rem 0;
+      @apply .block .px-4;
+    }
+
+    a {
+      @apply .text-white .block .font-thin .text-lg .text-center;
+      font-size: 1.5rem;
+      font-weight: 200;
     }
   }
 }
-
-
 @screen md {
   .nav {
     @apply .flex-row .justify-end .bg-transparent;
 
+    &-btn {
+      @apply .hidden;
+    }
+    
     &-item {
       @apply .block .px-4;
     }
+
     a {
       @apply .text-grey-dark;
 

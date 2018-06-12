@@ -1,8 +1,6 @@
 <template>
   <ul class="nav">
-    <template v-for="(link, i) in links">
-      <nav-link :key="i" :to="link.path" :name="link.name"></nav-link>
-    </template>
+    <nav-link v-for="(link, i) in links" :key="i" :to="link.path" :name="link.name"></nav-link>
   </ul>
 </template>
 

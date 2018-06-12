@@ -4,3 +4,38 @@
 .page-enter, .page-leave-active {
   opacity: 0
 }
+
+
+.slide-fade-enter-active {
+  transition: all .40s ease-out;
+
+}
+.slide-fade-leave-active {
+  transition: all .40s ease-out;
+  transition-delay: .25s;
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+.vertical-fade-enter-active, .vertical-fade-leave-active {
+  transition: opacity 500ms;
+}
+.vertical-fade-enter, .vertical-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+
+.accordion-enter,
+.accordion-leave-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 250ms ease-out;
+}
+
+.accordion-leave-to {
+  transition: all 250ms ease-out;
+  transform: translateY(20px);
+  opacity: 0;
+}
