@@ -1,7 +1,7 @@
 <template>
   <div>
     <headline :tag="tag">{{ text }}</headline>
-    <p class="text-grey-dark">
+    <p class="text-grey-darker leading-loose">
       <slot></slot>
     </p>
   </div>

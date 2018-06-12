@@ -8,7 +8,7 @@
 
   &-btn {
     z-index: 999;
-    @apply .text-purple-dark .font-extrabold;
+    @apply .text-indigo-dark .font-bold;
   }
 
   a {
@@ -16,9 +16,9 @@
 
     &.nuxt-link-exact-active,
     &.nuxt-link-exact-active:hover {
-      border-color: #673AB7;
+      // border-color: #673AB7;
       border-bottom-width: 3px;
-      @apply .font-medium;
+      @apply .font-medium .border-indigo;
     }
   }
   @media (max-width: 767px) {
@@ -50,7 +50,7 @@
     &-btn {
       @apply .hidden;
     }
-    
+
     &-item {
       @apply .block .px-4;
     }
@@ -60,7 +60,7 @@
 
       &.nuxt-link-exact-active,
       &.nuxt-link-exact-active:hover {
-        @apply .border-purple;
+        @apply .border-indigo;
       }
     }
   }

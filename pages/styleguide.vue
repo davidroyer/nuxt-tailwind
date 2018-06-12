@@ -1,9 +1,7 @@
 <template>
     <main-wrapper>
         <IntroBlock :tag="1" text="Our Styleguides">Wooooo, here are the styleguides</IntroBlock>
-
         <hr>
-
     </main-wrapper>
 </template>
 
