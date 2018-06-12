@@ -10,7 +10,8 @@ class TailwindExtractor {
 const purgecssWhitelistPatterns = [
   // /^elp(_.*)?$/,
   /^page-/,
-  /^nuxt-/
+  /^nuxt-/,
+  /^slide-/
 ]
 
 module.exports = {
