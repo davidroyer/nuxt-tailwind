@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+html,
+body {
+  @apply .h-screen;
+}
+
+html {
+  font-size: responsive 16px 20px;
+  font-range: config('screens.sm') config('screens.xl');
+  overflow-y: scroll;
+}
+
+body {
+  @apply .font-sans .text-base .bg-white .text-black;
+
+  line-height: responsive 1.6rem 2rem;
+  line-height-range: config('screens.sm') config('screens.xl');
+  font-variant-ligatures: none;
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  @apply .font-bold;
+}
+
+img {
+  @apply .inline-block .max-w-full .h-auto .align-middle;
+}
+
+ul,
+ol {
+  @apply .list-reset;
+}
+
+a,
+a:visited {
+  color: inherit;
+}
