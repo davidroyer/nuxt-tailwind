@@ -1,19 +1,20 @@
 <template>
-  <div>
-    <nav-bar></nav-bar>
-    <!-- <sidebar></sidebar> -->
-    <nuxt />
+  <div class="flex-1 z-10 bg-white">
+    <AppHeader></AppHeader>
+    <nuxt class="flex-1 z-10 bg-white"/>
+    <AppFooter class="fixed pin-b w-full h-24 flex items-center justify-center"></AppFooter>
   </div>
 </template>
 
 <script>
-import NavBar from '@/components/NavBar';
+import AppHeader from '@/components/AppHeader';
+import AppFooter from '@/components/AppFooter';
 // import Sidebar from '@/components/Sidebar';
 
 export default {
   components: {
-    NavBar
-    // Sidebar
+    AppHeader,
+    AppFooter
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <component :is="'h' + tag" class="mb-4 font-semibold md:font-bold text-indigo-darker leading-tight">
+    <component :is="'h' + tag" class="mb-4 font-semibold md:font-bold text-black leading-tight">
         <slot>
             This is the default text
         </slot>

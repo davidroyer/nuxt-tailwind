@@ -1,3 +1,11 @@
 <template>
-    <h2 @click="$router.push('/')" class="text-grey-darker">DR</h2>
+    <h2 @click="$router.push('/')" class="logo text-grey-darkest">
+      David<span class="ml-1 text-grey-dark">Royer</span>
+    </h2>
 </template>
+
+<style>
+  .logo {
+    z-index: 9999999;
+  }
+</style>

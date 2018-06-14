@@ -18,7 +18,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "tailwind-documentation",
+    title: "Nuxt Tailwind Starter - David Royer Website",
     meta: [{
         charset: "utf-8"
       },
@@ -45,7 +45,7 @@ module.exports = {
    ** Customize the progress bar color
    */
   loading: {
-    color: "#9561e2"
+    color: "#6574cd"
   },
   /*
    ** Build configuration

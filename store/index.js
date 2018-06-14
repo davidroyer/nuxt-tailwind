@@ -8,6 +8,10 @@ export const mutations = {
     state.menuIsActive = !state.menuIsActive
   },
 
+  setMenuState (state, payload) {
+    state.menuIsActive = !state.menuIsActive
+  },
+
   setCurrentPost(state, post) {
     state.post = post
   }

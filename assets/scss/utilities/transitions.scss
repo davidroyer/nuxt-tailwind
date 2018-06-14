@@ -20,6 +20,21 @@
   opacity: 0;
 }
 
+.mobile-nav-enter-active {
+  transition: all 250ms ease-out;
+
+}
+.mobile-nav-leave-active {
+  transition: all 250ms ease-out;
+  // transition-delay: .25s;
+}
+
+.mobile-nav-enter, .mobile-nav-leave-to {
+  transform: translateY(10px);
+  opacity: 0;
+}
+
+
 .vertical-fade-enter-active, .vertical-fade-leave-active {
   transition: opacity 500ms;
 }

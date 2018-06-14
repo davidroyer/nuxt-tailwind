@@ -7,9 +7,11 @@
         :class="{'text-white font-bold': $store.state.menuIsActive}">
         Menu
       </button>
-      <transition name="slide-fade">
+
+      <transition name="mobile-nav">
         <nav-links v-if="showMenu" :links="links"></nav-links>
       </transition>
+
     </div>
 </template>
 
@@ -23,12 +25,12 @@ export default {
     NavLinks,
     Logo
   },
-  
+
   data: () => ({
     links: [
       { name: "Home", path: "/" },
       { name: "About", path: "/about" },
-      { name: "Styleguide", path: "/styleguide" }
+      { name: "Blog", path: "/blog" }
     ],
     windowWidth: 0,
     windowHeight: 0
@@ -41,8 +43,12 @@ export default {
 
     showMenu() {
       if (!this.isMobile) return true;
-      if (this.$store.state.menuIsActive) return true
+      if (this.isMobile && this.$store.state.menuIsActive) return true
       else return false
+    },
+
+    width() {
+      return this.getWindowWidth();
     }
   },
 
@@ -59,9 +65,6 @@ export default {
 
 
   watch: {
-    windowWidth: function (newWidth, oldWidth) {
-     if (newWidth < 768) console.log('mobile')
-    }
   },
 
   methods: {

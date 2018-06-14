@@ -1,6 +1,6 @@
 <template>
     <main-wrapper>
-        <IntroBlock :tag="1" text="Our Styleguides">Wooooo, here are the styleguides</IntroBlock>
+        <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
         <hr>
     </main-wrapper>
 </template>
