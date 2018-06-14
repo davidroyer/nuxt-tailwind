@@ -2,7 +2,7 @@
   <div class="flex-1 z-10 bg-white">
     <AppHeader></AppHeader>
     <nuxt class="flex-1 z-10 bg-white"/>
-    <AppFooter class="fixed pin-b w-full h-24 flex items-center justify-center"></AppFooter>
+    <AppFooter class="fixed pin-b w-full h-12 md:h-24 flex items-center justify-center"></AppFooter>
   </div>
 </template>
 

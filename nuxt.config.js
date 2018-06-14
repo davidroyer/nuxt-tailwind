@@ -10,7 +10,8 @@ class TailwindExtractor {
 const purgecssWhitelistPatterns = [
   /^page-/,
   /^nuxt-/,
-  /^slide-/
+  /^slide-/,
+  /^mobile-nav-/
 ]
 
 module.exports = {
