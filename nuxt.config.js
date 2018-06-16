@@ -7,9 +7,24 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:/]+/g) || [];
   }
 }
-const purgecssWhitelistPatterns = [/^page-/, /^nuxt-/, /^-enter/, /^-leave/];
+const purgecssWhitelistPatterns = [
+  /^__/,
+  /^fa/,
+  /^page-/,
+  /^nuxt/,
+  /^-enter/,
+  /^-leave/
+];
 
 module.exports = {
+  /**
+   * Custom source and build directories
+   * @see https://nuxtjs.org/api/configuration-srcdir
+   * @see https://nuxtjs.org/api/configuration-builddir
+   */
+  srcDir: "./src",
+  buildDir: "./build",
+
   /*
    ** Headers of the page
    */
@@ -81,19 +96,9 @@ module.exports = {
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
    */
-  // sitemap: {
-  //   path: '/sitemap.xml',
-  //   hostname: config.url,
-  //   generate: true
-  // },
   sitemap: {
     hostname: "https://nuxt-tailwind.netlify.com/",
     generate: true
-    // gzip: false,
-    // exclude: [
-    //   '/404',
-    // ],
-    // routes: generateDynamicRoutes,
   },
 
   /*
@@ -120,9 +125,9 @@ module.exports = {
             // purgecss configuration
             // https://github.com/FullHuman/purgecss
             paths: glob.sync([
-              path.join(__dirname, "./pages/**/*.vue"),
-              path.join(__dirname, "./layouts/**/*.vue"),
-              path.join(__dirname, "./components/**/*.vue")
+              path.join(__dirname, "./src/pages/**/*.vue"),
+              path.join(__dirname, "./src/layouts/**/*.vue"),
+              path.join(__dirname, "./src/components/**/*.vue")
             ]),
             extractors: [
               {
@@ -130,15 +135,7 @@ module.exports = {
                 extensions: ["html", "js", "vue", "css"]
               }
             ],
-            whitelist: [
-              "html",
-              "body",
-              "nuxt-progress",
-              "page-enter",
-              "page-enter-active",
-              "page-leave",
-              "page-leave-active"
-            ],
+            whitelist: ["html", "body"],
             whitelistPatterns: purgecssWhitelistPatterns
           })
         );
