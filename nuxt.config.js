@@ -7,12 +7,7 @@ class TailwindExtractor {
     return content.match(/[A-z0-9-:/]+/g) || [];
   }
 }
-const purgecssWhitelistPatterns = [
-  /^page-/,
-  /^nuxt-/,
-  /^slide-/,
-  /^mobile-nav-/
-];
+const purgecssWhitelistPatterns = [/^page-/, /^nuxt-/, /^-enter/, /^-leave/];
 
 module.exports = {
   /*

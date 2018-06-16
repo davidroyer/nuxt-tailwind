@@ -4,8 +4,9 @@
       <button
         @click="$store.commit('toggleMenuState')"
         class="nav-btn"
+        v-text="navButtonText"
         :class="{'text-white font-bold': $store.state.menuIsActive}">
-        Menu
+
       </button>
 
       <template v-if="isMobile">
@@ -39,6 +40,10 @@ export default {
   }),
 
   computed: {
+    navButtonText() {
+      return this.$store.state.menuIsActive ? "Close" : "Menu";
+    },
+
     isMobile() {
       return this.windowWidth <= 767;
     }

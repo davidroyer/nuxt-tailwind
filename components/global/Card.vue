@@ -16,13 +16,7 @@
 </template>
 
 <script>
-// import Headline from "~/components/Typography/Headline";
-
 export default {
-  name: 'Card',
-  components: {
-    // Headline
-  },
-  // props: ["tag", "text"]
+  name: "Card"
 };
 </script>

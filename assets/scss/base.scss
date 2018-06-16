@@ -12,7 +12,7 @@ body {
 
 html {
   font-size: responsive 16px 20px;
-  font-range: config('screens.sm') config('screens.xl');
+  font-range: config("screens.sm") config("screens.xl");
   overflow-y: scroll;
 }
 
@@ -20,7 +20,7 @@ body {
   @apply .font-sans .text-base .bg-white .text-black;
 
   line-height: responsive 1.6rem 2rem;
-  line-height-range: config('screens.sm') config('screens.xl');
+  line-height-range: config("screens.sm") config("screens.xl");
   font-variant-ligatures: none;
   text-rendering: optimizeLegibility;
   text-size-adjust: 100%;
@@ -51,4 +51,9 @@ a:visited {
 
 .app-wrapper {
   @apply .flex .flex-col .min-h-screen;
+}
+
+a:focus,
+button:focus {
+  outline: 5px auto -webkit-focus-ring-color !important;
 }
