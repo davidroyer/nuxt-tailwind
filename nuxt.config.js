@@ -124,6 +124,7 @@ module.exports = {
           new PurgecssPlugin({
             // purgecss configuration
             // https://github.com/FullHuman/purgecss
+            keyframes: false,
             paths: glob.sync([
               path.join(__dirname, "./src/pages/**/*.vue"),
               path.join(__dirname, "./src/layouts/**/*.vue"),
