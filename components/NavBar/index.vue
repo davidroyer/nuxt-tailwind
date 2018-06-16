@@ -8,10 +8,12 @@
         Menu
       </button>
 
-      <transition name="mobile-nav">
-        <nav-links v-if="showMenu" :links="links"></nav-links>
-      </transition>
-
+      <template v-if="isMobile">
+        <transition name="scale">
+          <nav-links v-show="$store.state.menuIsActive" :links="links"></nav-links>
+        </transition>
+      </template>
+      <nav-links v-if="!isMobile" :links="links"></nav-links>
     </div>
 </template>
 
@@ -20,7 +22,7 @@ import NavLinks from "./NavLinks";
 import Logo from "./Logo";
 
 export default {
-  name: 'NavBar',
+  name: "NavBar",
   components: {
     NavLinks,
     Logo
@@ -38,33 +40,19 @@ export default {
 
   computed: {
     isMobile() {
-      return this.windowWidth <= 767
-    },
-
-    showMenu() {
-      if (!this.isMobile) return true;
-      if (this.isMobile && this.$store.state.menuIsActive) return true
-      else return false
-    },
-
-    width() {
-      return this.getWindowWidth();
+      return this.windowWidth <= 767;
     }
   },
 
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener('resize', this.getWindowWidth);
-      window.addEventListener('resize', this.getWindowHeight);
+      window.addEventListener("resize", this.getWindowWidth);
+      window.addEventListener("resize", this.getWindowHeight);
 
       //Init
-      this.getWindowWidth()
-      this.getWindowHeight()
-    })
-  },
-
-
-  watch: {
+      this.getWindowWidth();
+      this.getWindowHeight();
+    });
   },
 
   methods: {
@@ -78,8 +66,8 @@ export default {
   },
 
   beforeDestroy() {
-    window.removeEventListener('resize', this.getWindowWidth);
-    window.removeEventListener('resize', this.getWindowHeight);
+    window.removeEventListener("resize", this.getWindowWidth);
+    window.removeEventListener("resize", this.getWindowHeight);
   }
 };
 </script>

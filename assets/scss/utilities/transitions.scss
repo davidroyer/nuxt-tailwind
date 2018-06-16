@@ -1,44 +1,46 @@
-.page-enter-active, .page-leave-active {
-  transition: opacity .5s
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.5s;
 }
-.page-enter, .page-leave-active {
-  opacity: 0
+.page-enter,
+.page-leave-active {
+  opacity: 0;
 }
-
 
 .slide-fade-enter-active {
-  transition: all .40s ease-out;
-
+  transition: all 0.4s ease-out;
 }
 .slide-fade-leave-active {
-  transition: all .40s ease-out;
-  transition-delay: .25s;
+  transition: all 0.4s ease-out;
+  transition-delay: 0.25s;
 }
 
-.slide-fade-enter, .slide-fade-leave-to {
+.slide-fade-enter,
+.slide-fade-leave-to {
   transform: translateY(10px);
   opacity: 0;
 }
 
 .mobile-nav-enter-active {
   transition: all 250ms ease-out;
-
 }
 .mobile-nav-leave-active {
   transition: all 250ms ease-out;
   // transition-delay: .25s;
 }
 
-.mobile-nav-enter, .mobile-nav-leave-to {
+.mobile-nav-enter,
+.mobile-nav-leave-to {
   transform: translateY(10px);
   opacity: 0;
 }
 
-
-.vertical-fade-enter-active, .vertical-fade-leave-active {
+.vertical-fade-enter-active,
+.vertical-fade-leave-active {
   transition: opacity 500ms;
 }
-.vertical-fade-enter, .vertical-fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.vertical-fade-enter,
+.vertical-fade-leave-to {
   opacity: 0;
 }
 
@@ -52,5 +54,54 @@
 .accordion-leave-to {
   transition: all 250ms ease-out;
   transform: translateY(20px);
+  opacity: 0;
+}
+
+// ANIMATIONS
+
+.scale-in-hor-center {
+  animation: scale-in-hor-center 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes scale-in-hor-center {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in-center {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-out-center {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+}
+
+.scale-enter-active {
+  animation: scale-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.scale-leave-active {
+  animation: scale-out-center 0.35s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+.scale-enter,
+.scale-leave-to {
   opacity: 0;
 }

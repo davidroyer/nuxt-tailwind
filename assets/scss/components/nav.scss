@@ -12,7 +12,7 @@
   }
 
   &-item {
-  position: relative;
+    position: relative;
   }
 
   a {
@@ -26,16 +26,16 @@
     }
 
     &.nuxt-link-exact-active:after {
-        position: absolute;
-        bottom: 6px;
-        background: #6574cd;
-        width: 200px;
-        max-width: 100%;
-        height: 2px;
-        z-index: 999999;
-        content: '';
-        left: 50%;
-        transform: translateX(-50%);
+      position: absolute;
+      bottom: 6px;
+      background: #6574cd;
+      width: 200px;
+      max-width: 100%;
+      height: 2px;
+      z-index: 999999;
+      content: "";
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
   @media (max-width: 767px) {
@@ -80,8 +80,8 @@
         // @apply .border-indigo;
       }
       &.nuxt-link-exact-active:after {
-      bottom: 2px;
-      height: 3px;
+        bottom: 2px;
+        height: 3px;
       }
     }
   }
