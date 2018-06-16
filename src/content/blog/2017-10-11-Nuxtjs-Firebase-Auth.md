@@ -34,7 +34,7 @@ I have created 3 files that handle the issues faced when attempting to use Fireb
 
 ---
 
-# Firebase App Setup
+## Firebase App Setup
 
 To setup/initialize the firebase app with credentials, I created `services/fireinit.js`. An issue commonly seen by developers is Firebase telling us an app already exist. The line below solves this issue.
 
@@ -71,7 +71,7 @@ export default firebase;
 
 ---
 
-# Handling User Authentication State
+## Handling User Authentication State
 
 Firebase provides `onAuthStateChanged` to handle user state. I created `fireauth.js` to setup this functionality
 
@@ -96,7 +96,7 @@ export default context => {
 
 ---
 
-# Protecting Authenticated Routes
+## Protecting Authenticated Routes
 
 **Scenario 1:**
 A user is already signed-in and the next route is `/login`

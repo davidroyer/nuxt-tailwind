@@ -1,0 +1,51 @@
+.content {
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply .mt-6 .mb-4 .pt-6 .border-b-2 .border-grey-lighter;
+  }
+
+  h2 {
+    @apply .text-3xl;
+  }
+
+  h3 {
+    @apply .text-2xl;
+  }
+
+  em,
+  p,
+  ul,
+  ol,
+  strong {
+    @apply .my-4;
+  }
+
+  ul,
+  ol {
+    @apply .pl-6;
+  }
+  ul {
+    list-style-type: disc;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  pre {
+    @apply .mt-2 .mb-8;
+  }
+
+  ol,
+  ul,
+  p {
+    line-height: 1.7;
+    // @apply .leading-normal;
+  }
+}
+
+.post-title {
+  @apply .text-4xl .mt-6 .mb-4;
+}

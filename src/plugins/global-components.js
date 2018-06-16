@@ -4,19 +4,19 @@
  * PascalCased version of their file name.
  * @see https://webpack.js.org/guides/dependency-management/#require-context
  */
-import Vue from 'vue'
-import upperFirst from 'lodash/upperFirst'
-import camelCase from 'lodash/camelCase'
+import Vue from "vue";
+import upperFirst from "lodash/upperFirst";
+import camelCase from "lodash/camelCase";
 
 // Register all Vue components in the sub folder `global`
-const requireComponent = require.context('../components/global', true, /.vue$/)
+const requireComponent = require.context("../components/global", true, /.vue$/);
 
 // Require each matching file name
 requireComponent.keys().forEach(fileName => {
-  const componentConfig = requireComponent(fileName)
+  const componentConfig = requireComponent(fileName);
   // PascalCase name without file extension
-  const componentName = upperFirst(camelCase(fileName.replace(/\.\w+$/, '')))
-  console.log(componentConfig);
+  const componentName = upperFirst(camelCase(fileName.replace(/\.\w+$/, "")));
+
   // Globally register the component
-  Vue.component(componentName, componentConfig.default || componentConfig)
-})
+  Vue.component(componentName, componentConfig.default || componentConfig);
+});
