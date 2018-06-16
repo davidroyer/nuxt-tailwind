@@ -3,13 +3,13 @@
     <nuxt-link to="/">Home</nuxt-link> /
     <nuxt-link to="/blog">Blog</nuxt-link> /
     {{ post.linktitle }}
-  <h1 class="post-title">{{ post.title }} </h1>
-  <nuxtent-body class="content" :body="post.body" />
+    <h1 class="post-title">{{ post.title }} </h1>
+    <nuxtent-body class="content" :body="post.body" />
   </main-wrapper>
 </template>
 
 <script>
-import MainWrapper from "~/components/Layout/MainWrapper";
+import MainWrapper from "@/components/Layout/MainWrapper";
 
 export default {
   components: {
