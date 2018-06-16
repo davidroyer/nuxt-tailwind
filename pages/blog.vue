@@ -8,16 +8,15 @@
 <script>
 import MainWrapper from "~/components/Layout/MainWrapper";
 import IntroBlock from "~/components/Layout/IntroBlock";
-import Card from "~/components/Layout/Card";
+// import Card from "~/components/Layout/Card";
 
 export default {
   components: {
     MainWrapper,
-    IntroBlock,
-    Card
+    IntroBlock
   },
   data: () => ({
-    
+
   })
 };
 </script>
