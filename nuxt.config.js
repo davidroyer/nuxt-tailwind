@@ -74,7 +74,7 @@ module.exports = {
    * @see https://nuxtjs.org/guide/modules/
    * @see https://pwa.nuxtjs.org/
    */
-  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome"],
+  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome", "nuxtent"],
 
   /**
    * Font awsome icons
