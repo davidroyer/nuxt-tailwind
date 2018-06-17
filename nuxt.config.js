@@ -114,7 +114,6 @@ module.exports = {
       /**
        * Enable tree shaking for FontAwsome
        */
-
       config.resolve.alias["@fortawesome/fontawesome-free-brands$"] =
         "@fortawesome/fontawesome-free-brands/shakable.es.js";
       config.resolve.alias["@fortawesome/fontawesome-free-regular$"] =
