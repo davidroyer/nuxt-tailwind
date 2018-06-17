@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="examples">
-    <hero></hero>
+    <hero>
+      <headline class="relative px-4 text-5xl font-light text-center text-white" :tag="1">Front End Web Developer</headline>
+    </hero>
+
     <main-wrapper>
       <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat aut accusantium, ducimus eos. Aperiam fugit rerum esse at quis ducimus ipsum perspiciatis inventore doloribus provident quidem reiciendis, laudantium ad iure nam quod, repudiandae eveniet, sed soluta eaque! Sapiente possimus impedit ullam, dolor voluptatibus. Magni repellat aperiam dolores ipsam provident!</p>

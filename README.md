@@ -1,10 +1,10 @@
 # tailwind-documentation
 
-> Nuxt.js project
+> Nuxt.js Starter
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 $ npm install # Or yarn install
 

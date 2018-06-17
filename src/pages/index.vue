@@ -7,11 +7,5 @@
 </template>
 
 <script>
-import IntroBlock from "~/components/Layout/IntroBlock";
-
-export default {
-  components: {
-    IntroBlock
-  }
-};
+export default {};
 </script>

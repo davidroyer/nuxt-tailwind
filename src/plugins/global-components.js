@@ -16,7 +16,6 @@ requireComponent.keys().forEach(fileName => {
   const componentConfig = requireComponent(fileName);
   // PascalCase name without file extension
   const componentName = upperFirst(camelCase(fileName.replace(/\.\w+$/, "")));
-  console.log(componentConfig);
   // Globally register the component
   Vue.component(componentName, componentConfig.default || componentConfig);
 });
