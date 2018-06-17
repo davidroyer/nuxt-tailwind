@@ -7,12 +7,10 @@
 </template>
 
 <script>
-import MainWrapper from "@/components/Layout/MainWrapper";
 import IntroBlock from "@/components/Layout/IntroBlock";
 
 export default {
   components: {
-    MainWrapper,
     IntroBlock
   }
 };

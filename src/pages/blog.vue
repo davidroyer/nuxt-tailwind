@@ -1,22 +1,20 @@
 <template>
-  <div class="blog">
+  <!-- <div class="blog">
     <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
     <card></card>
-  </div>
-    <!-- <main-wrapper>
+  </div> -->
+    <main-wrapper>
       <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
       <card></card>
-    </main-wrapper> -->
+    </main-wrapper>
 </template>
 
 <script>
-import MainWrapper from "~/components/Layout/MainWrapper";
 import IntroBlock from "~/components/Layout/IntroBlock";
 // import Card from "~/components/Layout/Card";
 
 export default {
   components: {
-    MainWrapper,
     IntroBlock
   },
   data: () => ({})
