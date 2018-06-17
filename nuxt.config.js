@@ -152,7 +152,7 @@ module.exports = {
       }
     }
   },
-  css: ["~/assets/scss/main.scss"],
+  css: ["~/assets/styles/main.scss"],
 
   router: {
     middleware: ["menu"]

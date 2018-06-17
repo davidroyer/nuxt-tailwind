@@ -1,17 +1,19 @@
 <template>
-  <div class="app-wrapper flex-1 z-10 bg-white">
-    <AppHeader></AppHeader>
-    <nuxt class="flex-1 z-10 bg-white"/>
-    <AppFooter></AppFooter>
+  <div class="app-wrapper">
+    <app-header/>
+    <app-main/>
+    <app-footer/>
   </div>
 </template>
 
 <script>
+import AppMain from "@/components/AppMain";
 import AppHeader from "@/components/AppHeader";
 import AppFooter from "@/components/AppFooter";
 
 export default {
   components: {
+    AppMain,
     AppHeader,
     AppFooter
   }

@@ -4,7 +4,9 @@
 }
 
 .nav {
-  @apply .flex .flex-col .justify-start .list-reset;
+  &-list {
+    @apply .flex .flex-col .justify-start .list-reset;
+  }
 
   &-btn {
     z-index: 999;
@@ -62,7 +64,9 @@
 }
 @screen md {
   .nav {
-    @apply .flex-row .justify-end .bg-transparent;
+    &-list {
+      @apply .flex-row .justify-end .bg-transparent;
+    }
 
     &-btn {
       @apply .hidden;

@@ -2,14 +2,12 @@
 
 @tailwind components;
 
-
 /* Custom Components */
 @import "base";
 @import "components/nav";
-
+@import "components/hero";
 
 @tailwind utilities;
-
 
 /* Custom Utilities */
 @import "utilities/transitions";

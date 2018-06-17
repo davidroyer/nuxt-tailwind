@@ -1,8 +1,12 @@
 <template>
-    <main-wrapper>
+  <div class="blog">
+    <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
+    <card></card>
+  </div>
+    <!-- <main-wrapper>
       <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
       <card></card>
-    </main-wrapper>
+    </main-wrapper> -->
 </template>
 
 <script>
@@ -15,8 +19,6 @@ export default {
     MainWrapper,
     IntroBlock
   },
-  data: () => ({
-
-  })
+  data: () => ({})
 };
 </script>

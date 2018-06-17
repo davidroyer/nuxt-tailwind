@@ -3,15 +3,16 @@
       <logo></logo>
       <button
         @click="$store.commit('toggleMenuState')"
-        class="nav-btn"
         v-text="navButtonText"
-        :class="{'text-white font-bold': $store.state.menuIsActive}">
-
+        class="nav-btn"
+        :class="{'text-white font-bold': mobileMenuIsActive}"
+        aria-controls="nav-mobile"
+        :aria-expanded="mobileMenuIsActive ? 'true' : 'false'">
       </button>
 
       <template v-if="isMobile">
         <transition name="scale">
-          <nav-links v-show="$store.state.menuIsActive" :links="links"></nav-links>
+          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="links"></nav-links>
         </transition>
       </template>
       <nav-links v-if="!isMobile" :links="links"></nav-links>
@@ -33,15 +34,20 @@ export default {
     links: [
       { name: "Home", path: "/" },
       { name: "About", path: "/about" },
-      { name: "Blog", path: "/blog" }
+      { name: "Blog", path: "/blog" },
+      { name: "Examples", path: "/examples" }
     ],
     windowWidth: 0,
     windowHeight: 0
   }),
 
   computed: {
+    mobileMenuIsActive() {
+      return this.$store.state.menuIsActive;
+    },
+
     navButtonText() {
-      return this.$store.state.menuIsActive ? "Close" : "Menu";
+      return this.mobileMenuIsActive ? "Close" : "Menu";
     },
 
     isMobile() {
