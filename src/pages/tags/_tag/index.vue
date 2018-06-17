@@ -25,7 +25,7 @@ export default {
   },
   async asyncData({ app }) {
     const allPosts = await app.$content("/blog").getAll();
-    const allWork = await app.$content("/projects").getAll();
+    // const allWork = await app.$content("/projects").getAll();
 
     const { tag } = app.context.route.params;
 
@@ -38,8 +38,8 @@ export default {
       );
 
     return {
-      tagPosts: tagDocs(allPosts),
-      tagProjects: tagDocs(allWork)
+      tagPosts: tagDocs(allPosts)
+      // tagProjects: tagDocs(allWork)
     };
   }
   // head() {
