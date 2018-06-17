@@ -15,6 +15,7 @@ module.exports = {
     [
       "blog",
       {
+        page: "/blog/_post",
         permalink: "/blog/:slug",
         isPost: true,
         anchorLevel: 4,
@@ -22,14 +23,7 @@ module.exports = {
       }
     ]
   ],
-  api: function(isStatic) {
-    return {
-      baseURL: "http://localhost:3000",
-      browserBaseURL: isStatic
-        ? "https://nuxtent--nuxt-tailwind.netlify.com"
-        : ""
-    };
-  },
+
   parsers: {
     md: {
       extend(config) {
@@ -41,5 +35,14 @@ module.exports = {
         };
       }
     }
+  },
+
+  api: function(isStatic) {
+    return {
+      baseURL: "http://localhost:3000",
+      browserBaseURL: isStatic
+        ? "https://nuxtent--nuxt-tailwind.netlify.com"
+        : ""
+    };
   }
 };
