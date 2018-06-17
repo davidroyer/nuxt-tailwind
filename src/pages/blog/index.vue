@@ -6,7 +6,7 @@
             <nuxt-link :to="post.permalink">{{ post.linktitle || post.title }}</nuxt-link>
         </li>
     </ul>
-  </main-wrapper>  
+  </main-wrapper>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ export default {
     IntroBlock
   },
   async asyncData({ app, route }) {
-    const posts = await app.$content("/").getAll();
+    const posts = await app.$content("/blog").getAll();
     return { posts };
   }
 };

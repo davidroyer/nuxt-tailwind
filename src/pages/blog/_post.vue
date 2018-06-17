@@ -26,7 +26,7 @@ export default {
   },
 
   async asyncData({ app, route, payload }) {
-    return { post: (await app.$content("/").get(route.path)) || payload };
+    return { post: (await app.$content("/blog").get(route.path)) || payload };
   }
 };
 </script>

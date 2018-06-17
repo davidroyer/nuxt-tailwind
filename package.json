@@ -22,6 +22,7 @@
     "nuxt-fontawesome": "^0.2.0",
     "nuxtent": "^1.4.1",
     "prismjs": "^1.14.0",
+    "slugify": "^1.3.0",
     "tailwindcss": "^0.4.1"
   },
   "devDependencies": {
