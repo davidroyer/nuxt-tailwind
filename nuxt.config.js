@@ -72,9 +72,11 @@ module.exports = {
   /**
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
-   * @see https://pwa.nuxtjs.org/
+   * @see https://github.com/nuxt-community/analytics-module
+   * @see https://github.com/vaso2/nuxt-fontawesome
+   * @see https://github.com/nuxt-community/sitemap-module
    */
-  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome"],
+  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome", "@nuxtjs/google-analytics"],
 
   /**
    * Font awsome icons
@@ -93,6 +95,14 @@ module.exports = {
     ]
   },
 
+  /**
+   * Google analytics
+   * @see https://github.com/nuxt-community/analytics-module
+   */
+  'google-analytics': {
+     id: 'UA-56060335-6'
+   }
+   
   /**
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module

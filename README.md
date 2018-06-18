@@ -1,4 +1,10 @@
-# tailwind-documentation
+# Nuxt Website/App Starter
+
+## Modules
+- sitemap
+- google analytics
+- fontawesome
+
 
 > Nuxt.js Starter
 
