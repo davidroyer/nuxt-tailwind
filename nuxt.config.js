@@ -43,7 +43,7 @@ module.exports = {
       {
         hid: "description",
         name: "description",
-        content: "Nuxt.js project"
+        content: config.siteDescription
       }
     ],
     link: [
