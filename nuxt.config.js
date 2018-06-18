@@ -101,8 +101,8 @@ module.exports = {
    */
   'google-analytics': {
      id: 'UA-56060335-6'
-   }
-   
+   },
+
   /**
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
