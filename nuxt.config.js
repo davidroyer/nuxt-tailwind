@@ -1,6 +1,7 @@
 const path = require("path");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob-all");
+const config = require("./website.config");
 
 class TailwindExtractor {
   static extract(content) {
@@ -30,7 +31,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: "Nuxt Tailwind Starter - David Royer Website",
+    title: config.siteTitle,
     meta: [
       {
         charset: "utf-8"
@@ -76,7 +77,16 @@ module.exports = {
    * @see https://github.com/vaso2/nuxt-fontawesome
    * @see https://github.com/nuxt-community/sitemap-module
    */
-  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome", "@nuxtjs/google-analytics"],
+  modules: [
+    "@nuxtjs/sitemap",
+    "nuxt-fontawesome",
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: config.analyticsID
+      }
+    ]
+  ],
 
   /**
    * Font awsome icons
@@ -99,16 +109,16 @@ module.exports = {
    * Google analytics
    * @see https://github.com/nuxt-community/analytics-module
    */
-  'google-analytics': {
-     id: 'UA-56060335-6'
-   },
+  // "google-analytics": {
+  //   id: config.analyticsID
+  // },
 
   /**
    * Sitemap
    * @see https://github.com/nuxt-community/sitemap-module
    */
   sitemap: {
-    hostname: "https://nuxt-tailwind.netlify.com/",
+    hostname: config.siteUrl,
     generate: true
   },
 
