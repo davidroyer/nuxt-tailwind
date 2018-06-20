@@ -79,13 +79,13 @@ module.exports = {
    */
   modules: [
     "@nuxtjs/sitemap",
-    "nuxt-fontawesome"
-    // [
-    //   "@nuxtjs/google-analytics",
-    //   {
-    //     id: config.analyticsID
-    //   }
-    // ]
+    "nuxt-fontawesome",
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: config.analyticsID
+      }
+    ]
   ],
 
   /**
