@@ -1,10 +1,12 @@
 # Nuxt Website/App Starter
 
 ## Modules
-- sitemap
-- google analytics
-- fontawesome
 
+* sitemap
+* google analytics
+* fontawesome
+
+Create JPEG image sized at ??? and add it to static folder
 
 > Nuxt.js Starter
 
