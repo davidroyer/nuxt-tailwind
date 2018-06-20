@@ -1,7 +1,7 @@
 <template>
   <button
     class="vbutton border-2 border-black text-black"
-    :class="$style.button"
+    :class="$style.btn"
     v-on="$listeners"
   >
     <slot/>
@@ -11,10 +11,12 @@
 <script>
 export default {
   name: "VButton",
-  props: ["tag", "text", "headlineClasses"]
+  props: ["tag", "text"]
 };
 </script>
 
-<style lang="scss">
-
+<style lang="scss" module>
+.btn {
+  cursor: pointer;
+}
 </style>

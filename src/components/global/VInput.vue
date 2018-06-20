@@ -1,11 +1,11 @@
 <template>
   <div class="input max-w-sm mx-auto my-6">
-    <label v-text="label" :for="inputId" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"></label>
+    <label v-text="label" :for="id" class="block uppercase tracking-wide text-grey-darker text-xs font-bold mb-2"></label>
     <input
       :type="type"
       :value="value"
-      :id="inputId"
-      :name="inputId"
+      :id="id"
+      :name="id"
       class="appearance-none block w-full text-grey-darker border border-grey-light rounded py-3 px-4 leading-tight"
       :class="$style.input"
       v-on="listeners"
@@ -27,7 +27,7 @@ export default {
       type: [String, Number],
       default: ""
     },
-    inputId: {
+    id: {
       type: String,
       required: true
     },
@@ -48,51 +48,8 @@ export default {
 </script>
 
 <style lang="scss" module>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .input {
-  // @extend %typography-small;
-  display: block;
-  width: 100%;
-  // padding: $size-input-padding-vertical $size-input-padding-horizontal;
-  // margin-bottom: $size-grid-padding;
-  // line-height: 1;
-  // border: $size-input-border solid $color-input-border;
-  // border-radius: $size-input-border-radius;
+  // display: block;
+  // width: 100%;
 }
+</style>

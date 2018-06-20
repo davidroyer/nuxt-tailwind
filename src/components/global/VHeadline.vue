@@ -1,5 +1,5 @@
 <template>
-  <component :is="'h' + tag" class="mb-4 leading-tight">
+  <component :is="'h' + tag" class="mb-4 leading-tight" :class="headlineClasses">
     <slot>
         This is the default text
     </slot>
@@ -8,6 +8,6 @@
 
 <script>
 export default {
-  props: ["tag"]
+  props: ["tag", "headlineClasses"]
 };
 </script>

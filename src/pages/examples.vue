@@ -21,12 +21,19 @@
 
       <section class="border-b-2 my-8 py-8 inputs">
         <h2 class="mb-4">Inputs</h2>
-        <v-input inputId="name" label="Your Name"></v-input>
+        <v-input id="name" label="Your Name"></v-input>
       </section>
 
       <section class="border-b-2 my-8 py-8 buttons">
         <h2 class="mb-4">Buttons</h2>
         <v-button @click="handleClick">Do Something</v-button>
+        <v-button type="submit" @click="handleClick">Submit</v-button>
+        <form action="/" method="post">
+          <v-input id="firstName" label="First Name"></v-input>
+          <v-input id="lastName" label="Last Name"></v-input>
+          <v-button type="submit" value="Submit">Submit</v-button>
+          <v-button type="reset" value="Reset">Reset</v-button>
+        </form>
       </section>
     </v-wrapper>
   </div>
