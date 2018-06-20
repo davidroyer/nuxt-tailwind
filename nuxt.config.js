@@ -46,16 +46,24 @@ module.exports = {
         content: config.siteDescription
       },
       {
+        property: "og:title",
+        content: config.ogTitle
+      },
+      {
+        property: "og:type",
+        content: config.ogType
+      },
+      {
         property: "og:image",
         content: config.ogImage
       },
       {
-        property: "twitter:card",
-        content: "summary_large_image"
-      },
-      {
         property: "twitter:site",
         content: config.twitterUsername
+      },
+      {
+        property: "twitter:card",
+        content: "summary_large_image"
       }
     ],
     link: [

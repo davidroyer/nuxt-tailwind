@@ -12,6 +12,8 @@ module.exports = {
     "A boilerplate template for Nuxt.js projects using serveral Nuxt modules, global vue components, tailwindcss, and many other features.",
   siteFBAppID: "123456789", // Facebook App ID
   twitterUsername: "@DavidRoyer_", // Twitter Username
+  ogTitle: "David Royer",
+  ogType: "website",
   ogImage: "https://www.davidroyer.me/site.jpg",
   ogSiteName: "cara", // Facebook Site Name
   ogLanguage: "de_DE", // Facebook Language
