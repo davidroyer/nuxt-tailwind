@@ -94,10 +94,6 @@ module.exports = {
   /**
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
-   * @see https://github.com/nuxt-community/analytics-module
-   * @see https://github.com/vaso2/nuxt-fontawesome
-   * @see https://github.com/nuxt-community/sitemap-module
-   * @see https://github.com/nuxt-community/pwa-module
    */
   modules: [
     "@nuxtjs/sitemap",
@@ -112,6 +108,7 @@ module.exports = {
    */
   manifest: {
     name: config.ogTitle,
+    short_name: config.shortName,
     description: config.siteDescription,
     theme_color: config.themeColor
   },

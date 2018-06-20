@@ -4,7 +4,7 @@ module.exports = {
   pathPrefix: "/", // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
   analyticsID: "UA-56060335-6",
   siteTitle: "Nuxt Tailwind Starter - David Royer Website", // Navigation and Site Title
-  siteTitleAlt: "David Royer", // Alternative Site title for SEO
+  shortName: "D.Royer", // Alternative Site title for SEO
   siteUrl: "https://nuxt-tailwind.netlify.com", // Domain of your site. No trailing slash!
   siteLanguage: "en", // Language Tag on <html> element
   siteLogo: "/logos/logo-1024.png", // Used for SEO and manifest

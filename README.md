@@ -1,5 +1,22 @@
 # Nuxt Website/App Starter
 
+## Overview
+
+### Miscellaneous
+
+`website.config.js` exists so much of the meta info that will need to be changed for each site is easily accessible.
+
+This should allow for the contents of `nuxt.config.js` to remain more of a constant.
+
+The `Array` of Navigation Links are stored in `store.js`
+
+Nuxtent is still on the other branch
+
+### Components
+
+There are global components available that live at `components/global`
+They are registered via `global.js` inside `plugins`
+
 ## Modules
 
 * sitemap
