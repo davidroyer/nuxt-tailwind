@@ -12,10 +12,10 @@
 
       <template v-if="isMobile">
         <transition name="scale">
-          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="links"></nav-links>
+          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
         </transition>
       </template>
-      <nav-links v-if="!isMobile" :links="links"></nav-links>
+      <nav-links v-if="!isMobile" :links="navLinksArray"></nav-links>
     </div>
 </template>
 
@@ -31,17 +31,15 @@ export default {
   },
 
   data: () => ({
-    links: [
-      { name: "Home", path: "/" },
-      { name: "About", path: "/about" },
-      { name: "Blog", path: "/blog" },
-      { name: "Examples", path: "/examples" }
-    ],
     windowWidth: 0,
     windowHeight: 0
   }),
 
   computed: {
+    navLinksArray() {
+      return this.$store.state.navLinks;
+    },
+
     mobileMenuIsActive() {
       return this.$store.state.menuIsActive;
     },
