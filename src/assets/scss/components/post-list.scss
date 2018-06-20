@@ -1,0 +1,12 @@
+.post-list {
+  .tag {
+    &-link {
+      @apply .text-grey-dark;
+
+      &:hover,
+      &:focus {
+        @apply .underline;
+      }
+    }
+  }
+}

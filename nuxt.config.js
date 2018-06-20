@@ -89,6 +89,10 @@ module.exports = {
       {
         set: "@fortawesome/fontawesome-free-regular",
         icons: ["faBell"]
+      },
+      {
+        set: "@fortawesome/fontawesome-free-solid",
+        icons: ["faTag"]
       }
     ]
   },
@@ -118,6 +122,8 @@ module.exports = {
         "@fortawesome/fontawesome-free-brands/shakable.es.js";
       config.resolve.alias["@fortawesome/fontawesome-free-regular$"] =
         "@fortawesome/fontawesome-free-regular/shakable.es.js";
+      config.resolve.alias["@fortawesome/fontawesome-free-solid$"] =
+        "@fortawesome/fontawesome-free-solid/shakable.es.js";
 
       if (!isDev) {
         config.plugins.push(

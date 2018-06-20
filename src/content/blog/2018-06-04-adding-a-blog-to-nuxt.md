@@ -1,6 +1,10 @@
 ---
 title: Adding a Nuxtent-Powered Blog to My Nuxt Site
-tags: JavaScript, VueJS, Nuxt, Nuxtent, JAMStack, Markdown
+tags:
+  - JavaScript
+  - VueJS
+  - Nuxt
+  - Markdown
 abstract: In this post, I survey markdown blogging options for Vue and React, and briefly describe the process of adding a blog to my Nuxt site using the currently unmaintained Nuxtent module.
 ---
 

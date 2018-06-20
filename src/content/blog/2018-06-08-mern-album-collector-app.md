@@ -1,6 +1,10 @@
 ---
 title: Creating a Full-Stack MERN App from Scratch
-tags: JavaScript, React, Node, Mongo, Express, Webpack, Redux, Testing, Jest, Cypress, Storybook
+tags:
+  - JavaScript
+  - Markdown
+  - Node
+  - Nuxt
 abstract: This is the first of a series of posts where I describe step-by-step how to build an app from scratch using Mongo, Express, React, and Node. Using the example of a simple CRUD app that allows users upload album artwork and rate albums, I'll touch on configuring Webpack, linting, end-to-end testing, Redux, serverless functions, and more.
 ---
 

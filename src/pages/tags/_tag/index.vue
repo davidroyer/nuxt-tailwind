@@ -1,25 +1,33 @@
 <template lang="html">
-  <div>
-    <h1>Tags Page</h1>
-      <!-- <h2>Tag: {{$route.params.tag}}</h2>
+  <div class="container px-4 mx-auto max-w-xl">
+      <h1 class="text-center">Tags Page</h1>
+      <h2 class="text-center">
+        <font-awesome-icon :icon="['fas', 'tag']" style="font-size: 18px"/>Tag: <span class="font-light" v-text="$route.params.tag"></span>
+      </h2>
       <hr/>
-      <section v-if="tagProjects.length > 0">
-          <h3>Projects</h3>
-      </section>
-      <hr v-if="tagPosts.length > 0 && tagProjects.length > 0" />
-      <section v-if="tagPosts.length > 0">
-          <h3>Posts</h3>
-
-      </section> -->
+      <ul class="my-6 py-4 post-list flex flex-wrap justify-between">
+        <li v-for="(post, index) in taggedPosts" :key="index" class="mx-4 my-4">
+          <nuxt-link class="font-semibold" :to="post.permalink">{{ post.title }}</nuxt-link>
+          <div class="tags flex">
+            <div class="tag text-sm mr-4" v-for="(postTag, index) in post.tags" :key="index">
+              <nuxt-link class="tag-link no-underline font-bold" :to="'/tags/' + postTag | slugify">
+                <font-awesome-icon :icon="['fas', 'tag']" style="font-size: 12px"/> {{postTag}}
+              </nuxt-link>
+            </div>
+          </div>
+        </li>
+      </ul>
   </div>
-
 </template>
 <script>
+import MainWrapper from "@/components/Layout/MainWrapper";
 import { slugFilter } from "@/lib/filters.js";
+
 // import Blog from "@/layouts/blog";
 // import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
 export default {
   components: {
+    MainWrapper
     // Blog,
     // ProjectsGrid
   },
@@ -29,16 +37,16 @@ export default {
 
     const { tag } = app.context.route.params;
 
-    const tagDocs = docs =>
-      docs.filter(doc =>
-        doc.tags
-          .split(",")
+    const getPostsFromTag = posts =>
+      posts.filter(post =>
+        post.tags
+          // .split(",")
           .map(tag => slugFilter(tag))
           .includes(tag)
       );
 
     return {
-      tagPosts: tagDocs(allPosts)
+      taggedPosts: getPostsFromTag(allPosts)
       // tagProjects: tagDocs(allWork)
     };
   }
