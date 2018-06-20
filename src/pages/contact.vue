@@ -22,7 +22,7 @@
         <textarea v-model="form.message" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-normal" name="message" rows="8" cols="80"></textarea>
       </div>
       <div class="flex items-center justify-between">
-        <button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded">
+        <button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-grey-darker hover:bg-grey-darkest text-white font-bold py-2 px-4 rounded">
             Send
           </button>
       </div>

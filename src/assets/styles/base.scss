@@ -57,3 +57,7 @@ a:focus,
 button:focus {
   outline: 5px auto -webkit-focus-ring-color !important;
 }
+
+button {
+  transition: all 0.2s ease;
+}
