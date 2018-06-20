@@ -25,14 +25,13 @@
       </section>
 
       <section class="border-b-2 my-8 py-8 buttons">
-        <h2 class="mb-4">Buttons</h2>
+        <h2 class="text-center mb-4">Buttons</h2>
         <v-button @click="handleClick">Do Something</v-button>
-        <v-button type="submit" @click="handleClick">Submit</v-button>
         <form action="/" method="post">
           <v-input id="firstName" label="First Name"></v-input>
           <v-input id="lastName" label="Last Name"></v-input>
-          <v-button type="submit" value="Submit">Submit</v-button>
-          <v-button type="reset" value="Reset">Reset</v-button>
+          <v-button class="mx-2" type="reset" value="Reset">Reset</v-button>
+          <v-button class="mx-2" type="submit" value="Submit">Submit</v-button>
         </form>
       </section>
     </v-wrapper>
@@ -49,7 +48,21 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+
+  & > h2 {
+    text-align: center;
+    flex-basis: 100%;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 2.5rem;
+  }
+}
 .hero {
   background-image: url("~/assets/images/blog-me.jpeg");
 }
