@@ -2,11 +2,34 @@ const path = require("path");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob-all");
 const axios = require("axios");
+const slugify = require("slugify");
+
+const slugFilter = str =>
+  slugify(str, { replacement: "-", lower: true, remove: /[$*_+~.()'"!\-:@]/g });
+
+const uniqueArray = originalArray => [...new Set(originalArray)];
+
+const getPostsFromTag = (posts, tag) =>
+  posts.filter(post => post.tags.map(tag => slugFilter(tag)).includes(tag));
+
+const createTagRoutes = posts => {
+  let tagsArray = [];
+  for (var i = 0; i < posts.length; i++) {
+    for (var n = 0; n < posts[i].tags.length; n++) {
+      tagsArray.push(posts[i].tags[n]);
+    }
+  }
+  console.log("tagsArray: ", tagsArray);
+  return uniqueArray(tagsArray);
+};
+
 const isProduction = process.env.NODE_ENV === "production";
 const baseUrl = isProduction
   ? "https://nuxtent--nuxt-tailwind.netlify.com"
-  : "127.0.0.1:3000";
+  : "http://localhost:3000";
 
+const postsApiUrl = `${baseUrl}/_nuxt/content/blog/_all.json`;
+const testArray = ["1", "2", "3"];
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-z0-9-:/]+/g) || [];
@@ -22,6 +45,20 @@ const purgecssWhitelistPatterns = [
   /^leave/
 ];
 
+// async function postRoutes() {
+//   const { data } = await axios.get(
+//     "https://nuxtent--nuxt-tailwind.netlify.com/_nuxt/content/blog/_all.json"
+//   );
+//   // console.log(data);
+//   // return data.map(post => post.permalink);
+//   return createTagRoutes(data);
+// }
+//
+// postRoutes().then(tagsArray => {
+//   console.log("Result:  ", tagsArray);
+//   const tagRoutes = tagsArray.map(tag => `/tags/${tag}`);
+//   console.log("tagRoutes:  ", tagRoutes);
+// });
 module.exports = {
   /**
    * Custom source and build directories
@@ -100,6 +137,35 @@ module.exports = {
         icons: ["faTag"]
       }
     ]
+  },
+
+  generate: {
+    fallback: true
+    // routes: ["tags/tag1", "tags/tag2"]
+    // routes: function() {
+    //   return testArray.map(item => {
+    //     return "/tags/" + item;
+    //   });
+    //   return axios.get(postsApiUrl).then(res => {
+    //     return testArray.map(item => {
+    //       return "/tags/" + item;
+    //     });
+    //
+    //     const posts = res.data;
+    //     const tags = createTagRoutes(posts);
+    //     const testArray = ["/tags/1", "/tags/2", "/tags/3"];
+    //     console.log("TAGS: ", tags);
+    //     return testArray;
+    //     return tags.map(tag => {
+    //       return "/tags/" + tag;
+    //     });
+    //   });
+    // }
+    // routes() {
+    //   return axios.get(`${baseUrl}/_nuxt/content/posts/_all.json`).then(res => {
+    //     return res.data.map(post => post.permalink);
+    //   });
+    // }
   },
 
   /**

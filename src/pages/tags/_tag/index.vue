@@ -22,32 +22,19 @@
 <script>
 import MainWrapper from "@/components/Layout/MainWrapper";
 import { slugFilter } from "@/lib/filters.js";
+import { getPostsFromTag } from "@/lib/helpers.js";
 
-// import Blog from "@/layouts/blog";
-// import ProjectsGrid from "@/components/ProjectsGrid/ProjectsGrid";
 export default {
   components: {
     MainWrapper
-    // Blog,
-    // ProjectsGrid
   },
+
   async asyncData({ app }) {
     const allPosts = await app.$content("/blog").getAll();
-    // const allWork = await app.$content("/projects").getAll();
-
     const { tag } = app.context.route.params;
 
-    const getPostsFromTag = posts =>
-      posts.filter(post =>
-        post.tags
-          // .split(",")
-          .map(tag => slugFilter(tag))
-          .includes(tag)
-      );
-
     return {
-      taggedPosts: getPostsFromTag(allPosts)
-      // tagProjects: tagDocs(allWork)
+      taggedPosts: getPostsFromTag(allPosts, tag)
     };
   }
   // head() {
