@@ -7,11 +7,14 @@
     <div>Copyright &copy; {{ fullYear }} David Royer</div>
     <div class="social-links flex justify-center">
       <a class="m-2" href="https://github.com/davidroyer" target="_blank" rel="noopener">
-        <font-awesome-icon :icon="['fab', 'github']" /></a>
+        <v-icon name="github"></v-icon>
+      </a>
       <a class="m-2" href="https://twitter.com/DavidRoyer_" target="_blank" rel="noopener">
-        <font-awesome-icon :icon="['fab', 'twitter']" /></a>
+        <v-icon name="twitter"></v-icon>
+      </a>
       <a class="m-2" href="https://www.linkedin.com/in/dkroyer/" target="_blank" rel="noopener">
-        <font-awesome-icon :icon="['fab', 'linkedin-in']" /></a>
+        <v-icon name="linkedIn"></v-icon>
+      </a>
     </div>
   </footer>
 </template>
@@ -19,10 +22,10 @@
 
 <script>
 export default {
-  name: 'AppFooter',
+  name: "AppFooter",
   computed: {
     fullYear() {
-      return new Date().getFullYear()
+      return new Date().getFullYear();
     }
   }
 };

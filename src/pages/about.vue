@@ -1,9 +1,9 @@
 <template>
-  <main-wrapper>
-    <IntroBlock :tag="1" text="What we do">
+  <v-wrapper>
+    <v-intro :tag="1" text="What we do">
     It's cool, man. Yep. It's <strong>cool</strong>.
-    </IntroBlock>
-  </main-wrapper>
+  </v-intro>
+  </v-wrapper>
 </template>
 
 <script>

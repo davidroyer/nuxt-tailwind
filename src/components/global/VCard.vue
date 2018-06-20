@@ -17,6 +17,6 @@
 
 <script>
 export default {
-  name: "Card"
+  name: "VCard"
 };
 </script>

@@ -97,7 +97,7 @@ module.exports = {
    */
   modules: [
     "@nuxtjs/sitemap",
-    "nuxt-fontawesome",
+    // "nuxt-fontawesome",
     "@nuxtjs/google-analytics",
     "@nuxtjs/pwa"
   ],
@@ -118,23 +118,6 @@ module.exports = {
    * @see http://nuxt-pwa/icon
    */
   icon: false,
-
-  /**
-   * Font awsome icons
-   * @see https://github.com/vaso2/nuxt-fontawesome
-   */
-  fontawesome: {
-    imports: [
-      {
-        set: "@fortawesome/fontawesome-free-brands",
-        icons: ["faGithub", "faTwitter", "faLinkedinIn"]
-      },
-      {
-        set: "@fortawesome/fontawesome-free-regular",
-        icons: ["faBell"]
-      }
-    ]
-  },
 
   /**
    * Google analytics
@@ -163,19 +146,22 @@ module.exports = {
 
     extend(config, { isDev, isClient }) {
       /**
-       * Enable tree shaking for FontAwsome
+       * Enable removal of unused icons when building (tree shaking) for FontAwsome
        */
-
       config.resolve.alias["@fortawesome/fontawesome-free-brands$"] =
         "@fortawesome/fontawesome-free-brands/shakable.es.js";
       config.resolve.alias["@fortawesome/fontawesome-free-regular$"] =
         "@fortawesome/fontawesome-free-regular/shakable.es.js";
+      config.resolve.alias["@fortawesome/fontawesome-free-solid$"] =
+        "@fortawesome/fontawesome-free-solid/shakable.es.js";
 
       if (!isDev) {
         config.plugins.push(
+          /**
+           * PurgeCSS
+           * @see https://github.com/FullHuman/purgecss
+           */
           new PurgecssPlugin({
-            // purgecss configuration
-            // https://github.com/FullHuman/purgecss
             keyframes: false,
             paths: glob.sync([
               path.join(__dirname, "./src/pages/**/*.vue"),

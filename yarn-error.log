@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/droyer/.nvm/versions/node/v8.7.0/bin/node /Users/droyer/.yarn/bin/yarn.js build
+  /Users/droyer/.nvm/versions/node/v8.7.0/bin/node /Users/droyer/.yarn/bin/yarn.js generate
 
 PATH: 
   /Users/droyer/.yarn/bin:/Users/droyer/.nvm/versions/node/v8.7.0/bin:/users/droyer/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -31,6 +31,8 @@ npm manifest:
     "dependencies": {
       "@fortawesome/fontawesome-free-brands": "^5.0.13",
       "@fortawesome/fontawesome-free-regular": "^5.0.13",
+      "@fortawesome/fontawesome-free-solid": "^5.0.13",
+      "@fortawesome/vue-fontawesome": "^0.0.23",
       "@nuxtjs/google-analytics": "^2.0.2",
       "@nuxtjs/pwa": "^2.0.8",
       "@nuxtjs/sitemap": "^0.1.1",
@@ -222,6 +224,12 @@ Lockfile:
     dependencies:
       "@fortawesome/fontawesome-common-types" "^0.1.7"
   
+  "@fortawesome/fontawesome-free-solid@^5.0.13":
+    version "5.0.13"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.13.tgz#24b61aaf471a9d34a5364b052d64a516285ba894"
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.1.7"
+  
   "@fortawesome/fontawesome@^1.1.3":
     version "1.1.8"
     resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome/-/fontawesome-1.1.8.tgz#75fe66a60f95508160bb16bd781ad7d89b280f5b"
@@ -231,6 +239,10 @@ Lockfile:
   "@fortawesome/vue-fontawesome@^0.0.22":
     version "0.0.22"
     resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.0.22.tgz#720457bda0e5866265e5e0f8fe4fbd857fa5653f"
+  
+  "@fortawesome/vue-fontawesome@^0.0.23":
+    version "0.0.23"
+    resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.0.23.tgz#e70e3a9c30840e7ef437f99879254245c27c1b76"
   
   "@nuxtjs/google-analytics@^2.0.2":
     version "2.0.2"
@@ -7577,7 +7589,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c nuxt build
+  Arguments: -c nuxt generate
   Directory: /Users/droyer/Playground-2017/nuxt-tailwind-starter
   Output:
   

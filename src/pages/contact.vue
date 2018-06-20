@@ -1,28 +1,24 @@
 <template>
-<main-wrapper>
-  <h1 class="mb-6 text-center font-semibold text-5xl">Get In Touch</h1>
+<v-wrapper>
+  <h1 class="mb-8 text-center font-bold text-4xl">Get In Touch</h1>
   <div class="w-full max-w-md mx-auto">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-      <div class="mb-4">
-        <label class="block text-grey-darker text-sm font-bold mb-2" for="firstName">Name</label>
-        <input v-model="form.name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight" id="firstName" type="text" placeholder="Your First Name">
+    <form class="bg-white shadow-lg rounded-lg px-8 py-8 my-6">
+      <div class="my-6">
+        <v-input v-model="form.name" inputId="firstName" label="Your First Name"></v-input>
       </div>
-      <div class="mb-4">
-        <label class="block text-grey-darker text-sm font-bold mb-2" for="email">Email</label>
-        <input v-model="form.email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-tight" id="email" type="email" placeholder="Your Email">
+      <div class="my-6">
+        <v-input v-model="form.email" inputId="email" type="email" label="Your Email"></v-input>
       </div>
-      <div class="mb-6">
+      <div class="mb-8 pt-4 max-w-sm mx-auto">
         <label class="block text-grey-darker text-sm font-bold mb-2" for="email">Message</label>
         <textarea v-model="form.message" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker mb-3 leading-normal" name="message" rows="8" cols="80" placeholder="Write A Message..."></textarea>
       </div>
-      <div class="flex items-center justify-between">
-        <button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-grey-darker hover:bg-grey-darkest text-white font-bold py-2 px-4 rounded">
-          Send
-        </button>
+      <div class="flex items-center justify-between max-w-sm mx-auto">
+        <v-button type="submit" @click.prevent="handleSubmit" class="ml-auto bg-black hover:bg-white hover:text-black hover:border-black text-white font-bold py-2 px-4 rounded">Send</v-button>
       </div>
     </form>
   </div>
-</main-wrapper>
+</v-wrapper>
 </template>
 
 
