@@ -55,7 +55,7 @@ module.exports = {
       },
       {
         property: "og:image",
-        content: config.ogImage
+        content: `${config.siteUrl / config.ogImage}`
       },
       {
         property: "twitter:site",

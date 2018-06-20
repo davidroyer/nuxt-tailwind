@@ -14,7 +14,7 @@ module.exports = {
   twitterUsername: "@DavidRoyer_", // Twitter Username
   ogTitle: "David Royer",
   ogType: "website",
-  ogImage: "https://www.davidroyer.me/site.jpg",
+  ogImage: "site.jpg",
   ogSiteName: "cara", // Facebook Site Name
   ogLanguage: "de_DE", // Facebook Language
 
