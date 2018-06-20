@@ -26,7 +26,7 @@ export default {
   },
 
   async asyncData({ app, route, payload }) {
-    const post = payload || await app.$content("/blog").get(route.path)
+    const post = payload || (await app.$content("/blog").get(route.path));
     return { post };
   }
 };

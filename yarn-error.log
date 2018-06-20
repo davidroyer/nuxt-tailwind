@@ -31,6 +31,7 @@ npm manifest:
     "dependencies": {
       "@fortawesome/fontawesome-free-brands": "^5.0.13",
       "@fortawesome/fontawesome-free-regular": "^5.0.13",
+      "@fortawesome/fontawesome-free-solid": "^5.0.13",
       "@nuxtjs/axios": "^5.3.1",
       "@nuxtjs/sitemap": "^0.1.1",
       "autoprefixer": "^8.0.0",
@@ -43,6 +44,7 @@ npm manifest:
     },
     "devDependencies": {
       "babel-eslint": "^8.2.1",
+      "babel-plugin-prismjs": "^1.0.2",
       "eslint": "^4.15.0",
       "eslint-friendly-formatter": "^3.0.0",
       "eslint-loader": "^1.7.1",
@@ -221,6 +223,12 @@ Lockfile:
   "@fortawesome/fontawesome-free-regular@^5.0.13":
     version "5.0.13"
     resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-regular/-/fontawesome-free-regular-5.0.13.tgz#eb78c30184e3f456a423a1dcfa0f682f7b50de4a"
+    dependencies:
+      "@fortawesome/fontawesome-common-types" "^0.1.7"
+  
+  "@fortawesome/fontawesome-free-solid@^5.0.13":
+    version "5.0.13"
+    resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free-solid/-/fontawesome-free-solid-5.0.13.tgz#24b61aaf471a9d34a5364b052d64a516285ba894"
     dependencies:
       "@fortawesome/fontawesome-common-types" "^0.1.7"
   
@@ -800,6 +808,10 @@ Lockfile:
       babel-plugin-syntax-jsx "^6.18.0"
       html-tags "^2.0.0"
       svg-tags "^1.0.0"
+  
+  babel-plugin-prismjs@^1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/babel-plugin-prismjs/-/babel-plugin-prismjs-1.0.2.tgz#837bf6b32168b3ba624c054fc755946deb1b63fa"
   
   babel-plugin-syntax-async-functions@^6.8.0:
     version "6.13.0"

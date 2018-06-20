@@ -1,4 +1,6 @@
 const Prism = require("prismjs");
+var loadLanguages = require("prismjs/components/index.js");
+loadLanguages(["json"]);
 
 module.exports = {
   content: [

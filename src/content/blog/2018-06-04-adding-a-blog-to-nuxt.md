@@ -167,25 +167,24 @@ pages
 
 * In the `/blog/index.vue` page component, you want to get data for all of the blog posts, so specify `/blog` as the query and use the `getAll` method on the return object from the `$content` method of the `app`, the destructured Vue instance received by `asyncData`.
 
-```vue
+```html
 <template>
-<div class="navbar">
-  <logo></logo>
-  <button
-    @click="$store.commit('toggleMenuState')"
-    class="nav-btn"
-    v-text="navButtonText"
-    :class="{'text-white font-bold': $store.state.menuIsActive}">
+  <div class="navbar">
+    <logo></logo>
+    <button
+      @click="$store.commit('toggleMenuState')"
+      class="nav-btn"
+      v-text="navButtonText"
+      :class="{'text-white font-bold': $store.state.menuIsActive}">
+    </button>
 
-  </button>
-
-  <template v-if="isMobile">
-    <transition name="scale">
-      <nav-links v-show="$store.state.menuIsActive" :links="links"></nav-links>
-    </transition>
-  </template>
-  <nav-links v-if="!isMobile" :links="links"></nav-links>
-</div>
+    <template v-if="isMobile">
+      <transition name="scale">
+        <nav-links v-show="$store.state.menuIsActive" :links="links"></nav-links>
+      </transition>
+    </template>
+    <nav-links v-if="!isMobile" :links="links"></nav-links>
+  </div>
 </template>
 
 <script>

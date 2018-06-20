@@ -1,6 +1,11 @@
 const path = require("path");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob-all");
+const axios = require("axios");
+const isProduction = process.env.NODE_ENV === "production";
+const baseUrl = isProduction
+  ? "https://nuxtent--nuxt-tailwind.netlify.com"
+  : "127.0.0.1:3000";
 
 class TailwindExtractor {
   static extract(content) {
@@ -102,8 +107,13 @@ module.exports = {
    * @see https://github.com/nuxt-community/sitemap-module
    */
   sitemap: {
-    hostname: "https://nuxt-tailwind.netlify.com/",
+    hostname: baseUrl,
     generate: true
+    // routes() {
+    //   return axios.get(`${baseUrl}/_nuxt/content/posts/_all.json`).then(res => {
+    //     return res.data.map(post => post.permalink);
+    //   });
+    // }
   },
 
   /*

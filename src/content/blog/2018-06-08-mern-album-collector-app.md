@@ -56,7 +56,7 @@ The `React` code is in the `client` directory, the `Express` and `Mongo` code is
 
 * Touch `.eslintrc.json`
 
-```js
+```json
 //.eslintrc.json
 {
   "extends": ["airbnb"],
