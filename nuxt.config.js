@@ -77,16 +77,7 @@ module.exports = {
    * @see https://github.com/vaso2/nuxt-fontawesome
    * @see https://github.com/nuxt-community/sitemap-module
    */
-  modules: [
-    "@nuxtjs/sitemap",
-    "nuxt-fontawesome",
-    [
-      "@nuxtjs/google-analytics",
-      {
-        id: config.analyticsID
-      }
-    ]
-  ],
+  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome", "@nuxtjs/google-analytics"],
 
   /**
    * Font awsome icons
@@ -109,9 +100,9 @@ module.exports = {
    * Google analytics
    * @see https://github.com/nuxt-community/analytics-module
    */
-  // "google-analytics": {
-  //   id: config.analyticsID
-  // },
+  "google-analytics": {
+    id: config.analyticsID
+  },
 
   /**
    * Sitemap
