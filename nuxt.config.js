@@ -44,6 +44,18 @@ module.exports = {
         hid: "description",
         name: "description",
         content: config.siteDescription
+      },
+      {
+        property: "og:image",
+        content: config.ogImage
+      },
+      {
+        property: "twitter:card",
+        content: "summary_large_image"
+      },
+      {
+        property: "twitter:site",
+        content: config.twitterUsername
       }
     ],
     link: [
