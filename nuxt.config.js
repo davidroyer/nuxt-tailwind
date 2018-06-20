@@ -19,7 +19,7 @@ const createTagRoutes = posts => {
       tagsArray.push(posts[i].tags[n]);
     }
   }
-  console.log("tagsArray: ", tagsArray);
+  // console.log("tagsArray: ", tagsArray);
   return uniqueArray(tagsArray);
 };
 
@@ -45,20 +45,22 @@ const purgecssWhitelistPatterns = [
   /^leave/
 ];
 
-// async function postRoutes() {
-//   const { data } = await axios.get(
-//     "https://nuxtent--nuxt-tailwind.netlify.com/_nuxt/content/blog/_all.json"
-//   );
-//   // console.log(data);
-//   // return data.map(post => post.permalink);
-//   return createTagRoutes(data);
-// }
-//
-// postRoutes().then(tagsArray => {
-//   console.log("Result:  ", tagsArray);
-//   const tagRoutes = tagsArray.map(tag => `/tags/${tag}`);
-//   console.log("tagRoutes:  ", tagRoutes);
-// });
+async function postRoutes() {
+  const { data } = await axios.get(
+    "https://nuxtent--nuxt-tailwind.netlify.com/_nuxt/content/blog/_all.json"
+  );
+  return createTagRoutes(data);
+}
+
+let tagRoutesArray = [];
+function generateTagRoutes() {
+  postRoutes().then(tagsArray => {
+    tagRoutesArray = tagsArray.map(tag => `/tags/${tag}`);
+    console.log("tagRoutesArray:  ", tagRoutesArray);
+    return tagRoutesArray;
+  });
+}
+
 module.exports = {
   /**
    * Custom source and build directories
@@ -140,32 +142,8 @@ module.exports = {
   },
 
   generate: {
-    fallback: true
-    // routes: ["tags/tag1", "tags/tag2"]
-    // routes: function() {
-    //   return testArray.map(item => {
-    //     return "/tags/" + item;
-    //   });
-    //   return axios.get(postsApiUrl).then(res => {
-    //     return testArray.map(item => {
-    //       return "/tags/" + item;
-    //     });
-    //
-    //     const posts = res.data;
-    //     const tags = createTagRoutes(posts);
-    //     const testArray = ["/tags/1", "/tags/2", "/tags/3"];
-    //     console.log("TAGS: ", tags);
-    //     return testArray;
-    //     return tags.map(tag => {
-    //       return "/tags/" + tag;
-    //     });
-    //   });
-    // }
-    // routes() {
-    //   return axios.get(`${baseUrl}/_nuxt/content/posts/_all.json`).then(res => {
-    //     return res.data.map(post => post.permalink);
-    //   });
-    // }
+    fallback: true,
+    routes: tagRoutesArray
   },
 
   /**
