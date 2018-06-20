@@ -1,6 +1,6 @@
 <template>
   <div>
-    <headline :tag="tag">{{ text }}</headline>
+    <headline :tag="tag" :class="headlineClasses">{{ text }}</headline>
     <p class="text-grey-darkest leading-loose">
       <slot></slot>
     </p>
@@ -9,6 +9,6 @@
 
 <script>
 export default {
-  props: ["tag", "text"]
+  props: ["tag", "text", "headlineClasses"]
 };
 </script>

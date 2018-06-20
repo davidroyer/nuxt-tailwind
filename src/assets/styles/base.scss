@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  @apply .font-sans .text-base .bg-white .text-black;
+  @apply .font-sans .text-base .bg-grey-lightest .text-black;
 
   line-height: responsive 1.6rem 2rem;
   line-height-range: config("screens.sm") config("screens.xl");
