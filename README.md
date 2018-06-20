@@ -6,7 +6,8 @@
 * google analytics
 * fontawesome
 
-Create JPEG image sized at ??? and add it to static folder
+- Create JPEG image sized at ??? and add it to static folder
+- Netlify form
 
 > Nuxt.js Starter
 

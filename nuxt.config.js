@@ -77,6 +77,7 @@ module.exports = {
       class: "font-sans leading-normal"
     }
   },
+
   /*
    ** Customize the progress bar color
    */
@@ -96,8 +97,30 @@ module.exports = {
    * @see https://github.com/nuxt-community/analytics-module
    * @see https://github.com/vaso2/nuxt-fontawesome
    * @see https://github.com/nuxt-community/sitemap-module
+   * @see https://github.com/nuxt-community/pwa-module
    */
-  modules: ["@nuxtjs/sitemap", "nuxt-fontawesome", "@nuxtjs/google-analytics"],
+  modules: [
+    "@nuxtjs/sitemap",
+    "nuxt-fontawesome",
+    "@nuxtjs/google-analytics",
+    "@nuxtjs/pwa"
+  ],
+
+  /**
+   * PWA Manifest
+   * @see http://nuxt-pwa/manifest
+   */
+  manifest: {
+    name: config.ogTitle,
+    description: config.siteDescription,
+    theme_color: config.themeColor
+  },
+
+  /**
+   * PWA Icon
+   * @see http://nuxt-pwa/icon
+   */
+  icon: false,
 
   /**
    * Font awsome icons

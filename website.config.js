@@ -19,6 +19,6 @@ module.exports = {
   ogLanguage: "de_DE", // Facebook Language
 
   // Manifest and Progress color
-  themeColor: tailwind.colors.orange,
-  backgroundColor: tailwind.colors.blue
+  themeColor: tailwind.colors["grey-darkest"],
+  backgroundColor: tailwind.colors["grey-lightest"]
 };
