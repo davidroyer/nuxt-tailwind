@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import AppMain from "@/components/AppMain";
-import AppHeader from "@/components/AppHeader";
-import AppFooter from "@/components/AppFooter";
+import AppMain from '@/components/AppMain'
+import AppHeader from '@/components/AppHeader'
+import AppFooter from '@/components/AppFooter'
 
 export default {
   components: {
@@ -17,5 +17,5 @@ export default {
     AppHeader,
     AppFooter
   }
-};
+}
 </script>

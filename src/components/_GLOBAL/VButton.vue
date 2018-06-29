@@ -10,9 +10,9 @@
 
 <script>
 export default {
-  name: "VButton",
-  props: ["tag", "text"]
-};
+  name: 'VButton',
+  props: ['tag', 'text']
+}
 </script>
 
 <style lang="scss" module>

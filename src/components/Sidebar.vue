@@ -17,7 +17,7 @@
 </template>
 
 <script>
-  export default {
-    name: 'Sidebar'
-  };
+export default {
+  name: 'Sidebar'
+}
 </script>

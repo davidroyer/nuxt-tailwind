@@ -8,8 +8,8 @@
 
 <script>
 export default {
-  name: "VHero",
+  name: 'VHero',
 
-  props: ["tag", "text"]
-};
+  props: ['tag', 'text']
+}
 </script>

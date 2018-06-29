@@ -66,10 +66,10 @@
 export default {
   methods: {
     handleClick() {
-      alert("You did something.");
+      alert('You did something.')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +88,7 @@ section {
   }
 }
 .hero {
-  background-image: url("~/assets/images/blog-me.jpeg");
+  background-image: url('~/assets/images/blog-me.jpeg');
 }
 
 .sidebar-close {

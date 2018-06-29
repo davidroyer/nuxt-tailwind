@@ -17,15 +17,15 @@
 <script>
 export default {
   inheritAttrs: false,
-  name: "VInput",
+  name: 'VInput',
   props: {
     type: {
       type: String,
-      default: "text"
+      default: 'text'
     },
     value: {
       type: [String, Number],
-      default: ""
+      default: ''
     },
     id: {
       type: String,
@@ -33,18 +33,18 @@ export default {
     },
     label: {
       type: String,
-      default: ""
+      default: ''
     }
   },
   computed: {
     listeners() {
       return {
         ...this.$listeners,
-        input: event => this.$emit("input", event.target.value)
-      };
+        input: event => this.$emit('input', event.target.value)
+      }
     }
   }
-};
+}
 </script>
 
 <style lang="scss" module>

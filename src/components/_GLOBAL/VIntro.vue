@@ -9,6 +9,6 @@
 
 <script>
 export default {
-  props: ["tag", "text", "headlineClasses"]
-};
+  props: ['tag', 'text', 'headlineClasses']
+}
 </script>

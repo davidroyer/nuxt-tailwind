@@ -22,13 +22,13 @@
 
 <script>
 export default {
-  name: "AppFooter",
+  name: 'AppFooter',
   computed: {
     fullYear() {
-      return new Date().getFullYear();
+      return new Date().getFullYear()
     }
   }
-};
+}
 </script>
 
 <style>

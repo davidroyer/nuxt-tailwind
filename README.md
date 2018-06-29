@@ -2,7 +2,7 @@
 
 ## ToDo
 
-* [ ] Get `.prettier` to work
+* [x] Get `.prettier` to work
 * [ ] Check on async loading of some external components
 * [ ] Choose whether going to use .postcss file or set it in `nuxt.config`
 

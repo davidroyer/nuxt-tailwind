@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: "VWrapper"
-};
+  name: 'VWrapper'
+}
 </script>

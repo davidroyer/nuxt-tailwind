@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import FontAwesomeIcon from "@fortawesome/vue-fontawesome";
-import camelCase from "lodash/camelCase";
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import camelCase from 'lodash/camelCase'
 
 export default {
-  name: "VIcon",
+  name: 'VIcon',
   inheritAttrs: false,
   components: {
     FontAwesomeIcon
@@ -31,7 +31,7 @@ export default {
     },
     source: {
       type: String,
-      default: "font-awesome"
+      default: 'font-awesome'
     },
     name: {
       type: String,
@@ -39,7 +39,7 @@ export default {
     },
     fontSize: {
       type: String,
-      default: "24px"
+      default: '24px'
     },
     iconColor: {
       type: String
@@ -50,22 +50,22 @@ export default {
     fontAwesomeIcon() {
       return {
         // Add new icons to this list as you need them
-        sync: require("@fortawesome/fontawesome-free-solid/faSync"),
-        user: require("@fortawesome/fontawesome-free-solid/faUser"),
-        star: require("@fortawesome/fontawesome-free-solid/faStar"),
-        xCircle: require("@fortawesome/fontawesome-free-regular/faTimesCircle"),
+        sync: require('@fortawesome/fontawesome-free-solid/faSync'),
+        user: require('@fortawesome/fontawesome-free-solid/faUser'),
+        star: require('@fortawesome/fontawesome-free-solid/faStar'),
+        xCircle: require('@fortawesome/fontawesome-free-regular/faTimesCircle'),
 
-        github: require("@fortawesome/fontawesome-free-brands/faGithub"),
-        twitter: require("@fortawesome/fontawesome-free-brands/faTwitter"),
-        linkedIn: require("@fortawesome/fontawesome-free-brands/faLinkedinIn")
-      }[this.name];
+        github: require('@fortawesome/fontawesome-free-brands/faGithub'),
+        twitter: require('@fortawesome/fontawesome-free-brands/faTwitter'),
+        linkedIn: require('@fortawesome/fontawesome-free-brands/faLinkedinIn')
+      }[this.name]
     },
     // Gets a CSS module class, e.g. iconCustomLogo
     customIconClass() {
-      return this.$style[camelCase("icon-custom-" + this.name)];
+      return this.$style[camelCase('icon-custom-' + this.name)]
     }
   }
-};
+}
 </script>
 
 <style lang="scss">
