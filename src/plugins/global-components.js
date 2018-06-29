@@ -9,7 +9,11 @@ import upperFirst from "lodash/upperFirst";
 import camelCase from "lodash/camelCase";
 
 // Register all Vue components in the sub folder `global`
-const requireComponent = require.context("../components/global", true, /.vue$/);
+const requireComponent = require.context(
+  "../components/.GLOBAL",
+  true,
+  /.vue$/
+);
 
 // Require each matching file name
 requireComponent.keys().forEach(fileName => {

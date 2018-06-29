@@ -1,5 +1,6 @@
 export const state = () => ({
   menuIsActive: false,
+  sidebarOpen: false,
   navLinks: [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -13,6 +14,10 @@ export const state = () => ({
 export const mutations = {
   toggleMenuState(state) {
     state.menuIsActive = !state.menuIsActive;
+  },
+
+  toggleSidebar(state) {
+    state.sidebarOpen = !state.sidebarOpen;
   },
 
   setMenuState(state, payload) {

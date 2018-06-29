@@ -6,13 +6,13 @@
     itemtype="http://schema.org/WPFooter">
     <div>Copyright &copy; {{ fullYear }} David Royer</div>
     <div class="social-links flex justify-center">
-      <a class="m-2" href="https://github.com/davidroyer" target="_blank" rel="noopener">
+      <a class="m-2" href="https://github.com/davidroyer" target="_blank" rel="noopener" aria-label="github">
         <v-icon name="github"></v-icon>
       </a>
-      <a class="m-2" href="https://twitter.com/DavidRoyer_" target="_blank" rel="noopener">
+      <a class="m-2" href="https://twitter.com/DavidRoyer_" target="_blank" rel="noopener" aria-label="twitter">
         <v-icon name="twitter"></v-icon>
       </a>
-      <a class="m-2" href="https://www.linkedin.com/in/dkroyer/" target="_blank" rel="noopener">
+      <a class="m-2" href="https://www.linkedin.com/in/dkroyer/" target="_blank" rel="noopener" aria-label="linkedIn">
         <v-icon name="linkedIn"></v-icon>
       </a>
     </div>

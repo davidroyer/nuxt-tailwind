@@ -5,6 +5,8 @@
     :width="fontSize"
     :style="{ color: iconColor, fontSize: fontSize }"
     v-bind="$attrs"
+    v-on="$listeners"
+    :class="['icon', {'button': button}]"
   />
   <span
     v-else-if="source === 'custom'"
@@ -18,10 +20,15 @@ import camelCase from "lodash/camelCase";
 
 export default {
   name: "VIcon",
+  inheritAttrs: false,
   components: {
     FontAwesomeIcon
   },
   props: {
+    button: {
+      type: Boolean,
+      default: false
+    },
     source: {
       type: String,
       default: "font-awesome"
@@ -60,3 +67,11 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.icon {
+  &.button {
+    cursor: pointer;
+  }
+}
+</style>

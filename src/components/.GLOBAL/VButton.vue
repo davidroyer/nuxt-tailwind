@@ -1,7 +1,7 @@
 <template>
   <button
     class="vbutton border-2 border-black text-black"
-    :class="$style.btn"
+    :class="$style.button"
     v-on="$listeners"
   >
     <slot/>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss" module>
-.btn {
+.button {
   cursor: pointer;
 }
 </style>

@@ -12,19 +12,23 @@
         <p>Porro, asperiores quas fugit! Distinctio suscipit officia ex porro fugit ratione, quaerat asperiores vitae dolores natus molestiae inventore, sunt velit esse facilis. Sunt quia nemo vitae autem officiis soluta eum quae iste quasi odit voluptatum harum dolores, illum fugiat quod ipsum inventore reiciendis officia quos eaque dolorum tempore, consequatur laboriosam.</p>
       </div>
 
-      <section class="border-b-2 my-8 py-8 icons">
+      <section class="border-b-2 my-8 py-8 vicons">
         <h2 class="mb-4">Icons</h2>
         <v-icon name="user"></v-icon>
         <v-icon name="xCircle"></v-icon>
         <v-icon name="star"></v-icon>
+        <hr class="examples-hr">
+        <v-icon font-size="40px" name="user"></v-icon>
+        <v-icon font-size="40px" name="xCircle"></v-icon>
+        <v-icon font-size="40px" name="star"></v-icon>
       </section>
 
-      <section class="border-b-2 my-8 py-8 inputs">
+      <section class="border-b-2 my-8 py-8 vinputs">
         <h2 class="mb-4">Inputs</h2>
         <v-input id="name" label="Your Name"></v-input>
       </section>
 
-      <section class="border-b-2 my-8 py-8 buttons">
+      <section class="border-b-2 my-8 py-8 vbuttons">
         <h2 class="text-center mb-4">Buttons</h2>
         <v-button @click="handleClick">Do Something</v-button>
         <form action="/" method="post">
@@ -34,6 +38,19 @@
           <v-button class="mx-2" type="submit" value="Submit">Submit</v-button>
         </form>
       </section>
+
+      <section class="border-b-2 my-8 py-8 vsidebar">
+        <h2 class="mb-4">Sidebar</h2>
+        <v-button @click="$store.commit('toggleSidebar')">Sidebar</v-button>
+        <v-transition name="slide-x">
+          <v-sidebar class="bg-grey-darkest text-white" v-if="$store.state.sidebarOpen">
+            <v-icon font-size="32px" class="fixed sidebar-close" name="xCircle" button @click="$store.commit('toggleSidebar')"></v-icon>
+            Something here
+          </v-sidebar>
+        </v-transition>
+      </section>
+
+
     </v-wrapper>
   </div>
 </template>
@@ -54,7 +71,7 @@ section {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-around;
-
+  position: relative;
   & > h2 {
     text-align: center;
     flex-basis: 100%;
@@ -65,5 +82,15 @@ section {
 }
 .hero {
   background-image: url("~/assets/images/blog-me.jpeg");
+}
+
+.sidebar-close {
+  right: 10px;
+  top: 10px;
+  z-index: 9999999;
+}
+.examples-hr {
+  flex-basis: 100%;
+  margin: 2em 0;
 }
 </style>
