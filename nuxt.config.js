@@ -14,6 +14,7 @@ const purgecssWhitelistPatterns = [
   /^page-/,
   /^nuxt/,
   /^scale/,
+  /^slide/,
   /^enter/,
   /^leave/
 ];

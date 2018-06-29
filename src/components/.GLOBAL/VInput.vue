@@ -6,7 +6,7 @@
       :value="value"
       :id="id"
       :name="id"
-      class="appearance-none block w-full text-grey-darker border border-grey-light rounded py-3 px-4 leading-tight"
+      class="appearance-none block w-full text-grey-darker border border-grey-light rounded py-2 px-4 leading-tight"
       :class="$style.input"
       v-on="listeners"
       v-bind="$attrs"
