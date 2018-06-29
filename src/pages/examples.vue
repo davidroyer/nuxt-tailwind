@@ -12,6 +12,13 @@
         <p>Porro, asperiores quas fugit! Distinctio suscipit officia ex porro fugit ratione, quaerat asperiores vitae dolores natus molestiae inventore, sunt velit esse facilis. Sunt quia nemo vitae autem officiis soluta eum quae iste quasi odit voluptatum harum dolores, illum fugiat quod ipsum inventore reiciendis officia quos eaque dolorum tempore, consequatur laboriosam.</p>
       </div>
 
+      <section class="border-b-2 my-8 py-8 promiseTest">
+        <h2 class="mb-4">Promise Test - Without babel-ie-preset</h2>
+        <div>{{$store.state.testValue}}</div>
+        <v-button @click="$store.dispatch('promiseTest')">Run</v-button>
+
+      </section>
+
       <section class="border-b-2 my-8 py-8 vicons">
         <h2 class="mb-4">Icons</h2>
         <v-icon name="user"></v-icon>

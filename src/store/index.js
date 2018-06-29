@@ -1,6 +1,7 @@
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
+  testValue: "Initial",
   navLinks: [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
@@ -26,9 +27,22 @@ export const mutations = {
 
   setCurrentPost(state, post) {
     state.post = post;
+  },
+
+  setTestValue(state, payload) {
+    state.testValue = payload;
+  }
+};
+
+export const actions = {
+  async promiseTest({ commit }, payload) {
+    await delay(1200);
+    commit("setTestValue", "New Value");
   }
 };
 
 export const getters = {
   currentPost: state => state.post
 };
+
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));

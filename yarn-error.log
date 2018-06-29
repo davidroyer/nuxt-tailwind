@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/droyer/.nvm/versions/node/v8.7.0/bin/node /Users/droyer/.yarn/bin/yarn.js generate
+  /Users/droyer/.nvm/versions/node/v8.7.0/bin/node /Users/droyer/.yarn/bin/yarn.js add -d babel-preset-es2015-ie
 
 PATH: 
   /Users/droyer/.yarn/bin:/Users/droyer/.nvm/versions/node/v8.7.0/bin:/users/droyer/go/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -25,6 +25,7 @@ npm manifest:
       "build": "nuxt build",
       "start": "nuxt start",
       "generate": "nuxt generate",
+      "serve": "yarn generate && http-server dist",
       "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
       "precommit": "npm run lint"
     },
@@ -7586,17 +7587,14 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: sh
-  Arguments: -c nuxt generate
-  Directory: /Users/droyer/Playground-2017/nuxt-tailwind-starter
-  Output:
-  
-      at ProcessTermError.MessageError (/Users/droyer/.yarn/lib/cli.js:186:110)
-      at new ProcessTermError (/Users/droyer/.yarn/lib/cli.js:226:113)
-      at ChildProcess.<anonymous> (/Users/droyer/.yarn/lib/cli.js:30281:17)
-      at emitTwo (events.js:125:13)
-      at ChildProcess.emit (events.js:213:7)
-      at maybeClose (internal/child_process.js:927:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+  Error: Missing list of packages to add to your project.
+      at new MessageError (/Users/droyer/.yarn/lib/cli.js:186:110)
+      at Object.<anonymous> (/Users/droyer/.yarn/lib/cli.js:40587:13)
+      at Generator.next (<anonymous>)
+      at step (/Users/droyer/.yarn/lib/cli.js:98:30)
+      at /Users/droyer/.yarn/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/Users/droyer/.yarn/lib/cli.js:23451:28)
+      at Object.<anonymous> (/Users/droyer/.yarn/lib/cli.js:95:12)
+      at Object.run (/Users/droyer/.yarn/lib/cli.js:40599:19)
+      at run (/Users/droyer/.yarn/lib/cli.js:89113:20)
