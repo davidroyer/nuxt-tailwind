@@ -168,11 +168,12 @@ module.exports = {
               path.join(__dirname, "./src/pages/**/*.vue"),
               path.join(__dirname, "./src/layouts/**/*.vue"),
               path.join(__dirname, "./src/components/**/*.vue")
+              // path.join(__dirname, "./src/components/.GLOBAL/**/*.vue")
             ]),
             extractors: [
               {
                 extractor: TailwindExtractor,
-                extensions: ["html", "js", "vue", "css"]
+                extensions: ["html", "js", "vue", "css", "scss"]
               }
             ],
             whitelist: ["html", "body"],

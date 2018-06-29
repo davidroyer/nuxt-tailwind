@@ -7,7 +7,6 @@
 //   opacity: 0;
 // }
 
-/* purgecss start ignore */
 .page-enter-active,
 .page-leave-active {
   // transition: all .45s ease-in-out;
@@ -21,6 +20,7 @@
   transform: translate(10px, 0);
 }
 
+/* purgecss start ignore */
 .slide-fade-enter-active {
   transition: all 0.4s ease-out;
 }
@@ -34,6 +34,7 @@
   transform: translateY(10px);
   opacity: 0;
 }
+/* purgecss end ignore */
 
 .mobile-nav-enter-active {
   transition: all 250ms ease-out;
@@ -140,6 +141,7 @@
   }
 }
 
+/* purgecss start ignore */
 .scale-enter-active {
   animation: scale-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
@@ -160,5 +162,4 @@
 .scale-leave-to {
   // opacity: 0;
 }
-
 /* purgecss end ignore */

@@ -10,7 +10,7 @@ import camelCase from "lodash/camelCase";
 
 // Register all Vue components in the sub folder `global`
 const requireComponent = require.context(
-  "../components/.GLOBAL",
+  "../components/_GLOBAL",
   true,
   /.vue$/
 );
