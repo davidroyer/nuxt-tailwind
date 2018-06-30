@@ -169,6 +169,12 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.1.7"
 
+"@fortawesome/fontawesome@^1.1.8":
+  version "1.1.8"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome/-/fontawesome-1.1.8.tgz#75fe66a60f95508160bb16bd781ad7d89b280f5b"
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.1.7"
+
 "@fortawesome/vue-fontawesome@^0.0.23":
   version "0.0.23"
   resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-0.0.23.tgz#e70e3a9c30840e7ef437f99879254245c27c1b76"
