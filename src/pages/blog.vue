@@ -20,7 +20,7 @@ export default {
         },
         {
           hid: "og:description",
-          name: "description",
+          property: "og:description",
           content: metaDescription
         }
       ]
