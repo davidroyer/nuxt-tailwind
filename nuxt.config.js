@@ -32,7 +32,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    title: config.siteTitle,
+    titleTemplate: `%s - ${config.siteTitle}`,
     meta: [
       {
         charset: "utf-8"
@@ -47,20 +47,8 @@ module.exports = {
         content: config.siteDescription
       },
       {
-        property: "og:title",
-        content: config.ogTitle
-      },
-      {
-        property: "og:host",
-        content: config.siteUrl
-      },
-      {
         property: "og:type",
         content: config.ogType
-      },
-      {
-        property: "og:image",
-        content: `${config.siteUrl}/${config.ogImage}`
       },
       {
         property: "twitter:site",
@@ -71,6 +59,22 @@ module.exports = {
         content: config.twitterUsername
       },
       {
+        hid: "og:title",
+        property: "og:title",
+        content: config.ogTitle
+      },
+      {
+        hid: "og:host",
+        property: "og:host",
+        content: config.siteUrl
+      },
+      {
+        hid: "og:image",
+        property: "og:image",
+        content: `${config.siteUrl}/${config.ogImage}`
+      },
+      {
+        hid: "twitter:card",
         property: "twitter:card",
         content: "summary"
       }
@@ -149,6 +153,7 @@ module.exports = {
    ** Build configuration
    */
   build: {
+    watch: ["./website.config.js"],
     extractCSS: true,
 
     postcss: [require("tailwindcss")("./tailwind.js"), require("autoprefixer")],

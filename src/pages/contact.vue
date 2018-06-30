@@ -24,35 +24,43 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: "Contact Me"
+    };
+  },
+
   data() {
     return {
       form: {
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: ""
       }
-    }
+    };
   },
   methods: {
     encode(data) {
       return Object.keys(data)
-        .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
-        .join('&')
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join("&");
     },
     handleSubmit() {
-      fetch('/', {
-        method: 'POST',
+      fetch("/", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
+          "Content-Type": "application/x-www-form-urlencoded"
         },
         body: this.encode({
-          'form-name': 'contact',
+          "form-name": "contact",
           ...this.form
         })
       })
-        .then(() => alert('Success!'))
-        .catch(error => alert(error))
+        .then(() => alert("Success!"))
+        .catch(error => alert(error));
     }
   }
-}
+};
 </script>

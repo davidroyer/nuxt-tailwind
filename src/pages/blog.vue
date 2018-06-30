@@ -6,7 +6,25 @@
 </template>
 
 <script>
+const metaDescription = "Blog Articles on Web Development";
+
 export default {
-  data: () => ({})
-}
+  head() {
+    return {
+      title: "Blog",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: metaDescription
+        },
+        {
+          hid: "og:description",
+          name: "description",
+          content: metaDescription
+        }
+      ]
+    };
+  }
+};
 </script>

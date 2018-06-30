@@ -3,7 +3,7 @@ const tailwind = require("./tailwind");
 module.exports = {
   pathPrefix: "/", // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "/portfolio"
   analyticsID: "UA-56060335-6",
-  siteTitle: "Nuxt Tailwind Starter - David Royer Website", // Navigation and Site Title
+  siteTitle: "Nuxt TailWind Starter - David Royer", // Navigation and Site Title
   shortName: "D.Royer", // Alternative Site title for SEO
   siteUrl: "https://nuxt-tailwind.netlify.com", // Domain of your site. No trailing slash!
   siteLanguage: "en", // Language Tag on <html> element
@@ -14,7 +14,7 @@ module.exports = {
   twitterUsername: "@DavidRoyer_", // Twitter Username
   ogTitle: "David Royer",
   ogType: "website",
-  ogImage: "site.jpg",
+  ogImage: "icon.png",
   ogSiteName: "cara", // Facebook Site Name
   ogLanguage: "de_DE", // Facebook Language
 

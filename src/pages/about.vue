@@ -7,7 +7,25 @@
 </template>
 
 <script>
+const metaDescription = "Information on David Royer";
+
 export default {
-  components: {}
+  head() {
+    return {
+      title: "About",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: metaDescription
+        },
+        {
+          hid: "og:description",
+          name: "description",
+          content: metaDescription
+        }
+      ]
+    };
+  }
 };
 </script>

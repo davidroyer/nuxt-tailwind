@@ -63,13 +63,33 @@
 </template>
 
 <script>
+const metaDescription =
+  "Examples showing the custom components and features of this this Nuxt.js Starter Template";
+
 export default {
+  head() {
+    return {
+      title: "Examples",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: metaDescription
+        },
+        {
+          hid: "og:description",
+          name: "description",
+          content: metaDescription
+        }
+      ]
+    };
+  },
   methods: {
     handleClick() {
-      alert('You did something.')
+      alert("You did something.");
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -88,7 +108,7 @@ section {
   }
 }
 .hero {
-  background-image: url('~/assets/images/blog-me.jpeg');
+  background-image: url("~/assets/images/blog-me.jpeg");
 }
 
 .sidebar-close {
