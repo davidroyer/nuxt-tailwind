@@ -1,9 +1,12 @@
-import { slugFilter } from "@/lib/filters";
+import slugify from "slugify";
+
+export const slugifyText = str =>
+  slugify(str, { replacement: "-", lower: true, remove: /[$*_+~.()'"!\-:@]/g });
 
 export const uniqueArray = originalArray => [...new Set(originalArray)];
 
 export const getPostsFromTag = (posts, tag) =>
-  posts.filter(post => post.tags.map(tag => slugFilter(tag)).includes(tag));
+  posts.filter(post => post.tags.map(tag => slugifyText(tag)).includes(tag));
 
 export const tagRoutes = posts => {
   let tagsArray = [];

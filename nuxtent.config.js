@@ -9,15 +9,15 @@ module.exports = {
       {
         page: "/projects/_slug",
         permalink: "/projects/:slug",
-        isPost: false
-        // generate: ["get", "getAll"]
+        isPost: false,
+        generate: ["get", "getAll"]
       }
     ],
 
     [
       "blog",
       {
-        page: "/blog/_post",
+        page: "/blog/_slug",
         permalink: "/blog/:slug",
         isPost: true,
         anchorLevel: 4,

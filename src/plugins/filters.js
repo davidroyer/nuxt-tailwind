@@ -1,5 +1,5 @@
-import Vue from 'vue';
-import { dateFilter, slugFilter } from '../lib/filters';
+import Vue from "vue";
+import { dateFilter, slugFilter } from "@/utilities/filters";
 
-Vue.filter('date', dateFilter);
-Vue.filter('slugify', slugFilter);
+Vue.filter("date", dateFilter);
+Vue.filter("slugify", slugFilter);

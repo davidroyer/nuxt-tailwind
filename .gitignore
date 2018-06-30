@@ -10,3 +10,5 @@ build
 
 # Nuxt generate
 dist
+
+.NUXTENT

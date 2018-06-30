@@ -21,8 +21,8 @@
 </template>
 <script>
 import MainWrapper from "@/components/Layout/MainWrapper";
-import { slugFilter } from "@/lib/filters.js";
-import { getPostsFromTag } from "@/lib/helpers.js";
+import { slugFilter } from "@/utilities/filters.js";
+import { getPostsFromTag } from "@/utilities/helpers.js";
 
 export default {
   components: {
@@ -37,10 +37,5 @@ export default {
       taggedPosts: getPostsFromTag(allPosts, tag)
     };
   }
-  // head() {
-  //   return {
-  //     title: "Tag: " + this.$route.params.tag
-  //   };
-  // }
 };
 </script>

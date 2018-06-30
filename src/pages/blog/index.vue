@@ -19,7 +19,6 @@
 <script>
 import MainWrapper from "~/components/Layout/MainWrapper";
 import IntroBlock from "~/components/Layout/IntroBlock";
-import { slugFilter } from "@/lib/filters.js";
 
 export default {
   components: {

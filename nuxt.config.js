@@ -1,40 +1,17 @@
 const path = require("path");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const glob = require("glob-all");
-const axios = require("axios");
-const slugify = require("slugify");
-
-const slugFilter = str =>
-  slugify(str, { replacement: "-", lower: true, remove: /[$*_+~.()'"!\-:@]/g });
-
-const uniqueArray = originalArray => [...new Set(originalArray)];
-
-const getPostsFromTag = (posts, tag) =>
-  posts.filter(post => post.tags.map(tag => slugFilter(tag)).includes(tag));
-
-const createTagRoutes = posts => {
-  let tagsArray = [];
-  for (var i = 0; i < posts.length; i++) {
-    for (var n = 0; n < posts[i].tags.length; n++) {
-      tagsArray.push(posts[i].tags[n]);
-    }
-  }
-  // console.log("tagsArray: ", tagsArray);
-  return uniqueArray(tagsArray);
-};
-
 const isProduction = process.env.NODE_ENV === "production";
 const baseUrl = isProduction
   ? "https://nuxtent--nuxt-tailwind.netlify.com"
   : "http://localhost:3000";
 
-const postsApiUrl = `${baseUrl}/_nuxt/content/blog/_all.json`;
-const testArray = ["1", "2", "3"];
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-z0-9-:/]+/g) || [];
   }
 }
+
 const purgecssWhitelistPatterns = [
   /^__/,
   /^fa/,
@@ -44,22 +21,6 @@ const purgecssWhitelistPatterns = [
   /^enter/,
   /^leave/
 ];
-
-async function postRoutes() {
-  const { data } = await axios.get(
-    "https://nuxtent--nuxt-tailwind.netlify.com/_nuxt/content/blog/_all.json"
-  );
-  return createTagRoutes(data);
-}
-
-let tagRoutesArray = [];
-function generateTagRoutes() {
-  postRoutes().then(tagsArray => {
-    tagRoutesArray = tagsArray.map(tag => `/tags/${tag}`);
-    console.log("tagRoutesArray:  ", tagRoutesArray);
-    return tagRoutesArray;
-  });
-}
 
 module.exports = {
   /**
@@ -142,8 +103,7 @@ module.exports = {
   },
 
   generate: {
-    fallback: true,
-    routes: tagRoutesArray
+    fallback: true
   },
 
   /**
@@ -153,11 +113,6 @@ module.exports = {
   sitemap: {
     hostname: baseUrl,
     generate: true
-    // routes() {
-    //   return axios.get(`${baseUrl}/_nuxt/content/posts/_all.json`).then(res => {
-    //     return res.data.map(post => post.permalink);
-    //   });
-    // }
   },
 
   /*
