@@ -5,6 +5,8 @@
 * [x] Get `.prettier` to work
 * [ ] Check on async loading of some external components
 * [ ] Choose whether going to use .postcss file or set it in `nuxt.config`
+* [ ] Add form feedback with validation
+* [ ] Add thank you message or redirect to thank-you page via `$route.push`
 
 ## Overview
 
