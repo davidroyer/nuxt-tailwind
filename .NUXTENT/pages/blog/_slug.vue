@@ -10,21 +10,41 @@
 
 <script>
 import MainWrapper from "@/components/Layout/MainWrapper";
+const metaDescription = 'Get description from blog post'
 
 export default {
   components: {
     MainWrapper
   },
-  head: {
-    link: [
-      {
-        rel: "stylesheet",
-        href:
-          "https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css"
-      }
-    ]
-  },
-
+  head() {
+    return {
+      title: "Blog",
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: metaDescription
+        },
+        {
+          hid: "og:description",
+          property: "og:description",
+          content: metaDescription
+        },
+        {
+          hid: "og:type",
+          property: "og:type",
+          content: 'article'
+        }
+      ],
+      link: [
+        {
+          rel: "stylesheet",
+          href:
+            "https://cdnjs.cloudflare.com/ajax/libs/prism/1.14.0/themes/prism-tomorrow.css"
+        }
+      ]
+    };
+  }
   async asyncData({ app, route, payload }) {
     const post = payload || (await app.$content("/blog").get(route.path));
     return { post };

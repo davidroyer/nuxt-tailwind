@@ -8,6 +8,21 @@
 
 ## Overview
 
+**_Includes_**
+
+* Fine Tuning for SEO by proper use of `hid` in meta tags
+* Use of social media meta tags so each page can have its own metaDescription
+* Focus on accessiblity
+* Component Library
+* PurgeCSS to remove unused css
+* TailwindCSS
+* Special config file to be the primary file that will need to be updated on a project by project basic
+* `website.config.js`
+* Use of `prettier`
+* Google analytics via `@nuxtjs/google-analytics`
+* PWA `@nuxtjs/pwa`
+* Sitemap for SEO via `@nuxtjs/sitemap`
+
 ### Miscellaneous
 
 `website.config.js` exists so much of the meta info that will need to be changed for each site is easily accessible.

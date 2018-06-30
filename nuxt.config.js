@@ -47,10 +47,6 @@ module.exports = {
         content: config.siteDescription
       },
       {
-        property: "og:type",
-        content: config.ogType
-      },
-      {
         property: "twitter:site",
         content: config.twitterUsername
       },
@@ -62,6 +58,11 @@ module.exports = {
         hid: "og:title",
         property: "og:title",
         content: config.ogTitle
+      },
+      {
+        hid: "og:type",
+        property: "og:type",
+        content: config.ogType
       },
       {
         hid: "og:host",
