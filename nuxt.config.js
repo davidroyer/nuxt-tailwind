@@ -108,12 +108,7 @@ module.exports = {
    * Custom Nuxt modules
    * @see https://nuxtjs.org/guide/modules/
    */
-  modules: [
-    "@nuxtjs/sitemap",
-    // "nuxt-fontawesome",
-    "@nuxtjs/google-analytics",
-    "@nuxtjs/pwa"
-  ],
+  modules: ["@nuxtjs/sitemap", "@nuxtjs/google-analytics", "@nuxtjs/pwa"],
 
   /**
    * PWA Manifest
@@ -130,7 +125,7 @@ module.exports = {
    * PWA Icon
    * @see http://nuxt-pwa/icon
    */
-  icon: false,
+  icon: true,
 
   /**
    * Google analytics
