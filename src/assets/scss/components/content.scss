@@ -47,6 +47,14 @@
   }
 }
 
-.post-title {
-  @apply .text-4xl .mt-6 .mb-4;
+.post {
+  @apply .text-grey-darkest;
+
+  &-title {
+    @apply .text-4xl .mt-6 .mb-4 .leading-tight;
+  }
+
+  &-content {
+    // @apply .text-grey-darkest;
+  }
 }

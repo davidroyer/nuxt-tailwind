@@ -57,3 +57,11 @@ a:focus,
 button:focus {
   outline: 5px auto -webkit-focus-ring-color !important;
 }
+
+pre {
+  white-space: pre-wrap;
+}
+
+code {
+  word-wrap: break-word;
+}

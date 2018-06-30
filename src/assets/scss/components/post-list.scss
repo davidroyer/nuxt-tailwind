@@ -1,4 +1,5 @@
 .post-list {
+  @apply .justify-around;
   .tag {
     &-link {
       @apply .text-grey-dark;
@@ -8,5 +9,9 @@
         @apply .underline;
       }
     }
+  }
+
+  &-item {
+    flex: 0 1 300px;
   }
 }

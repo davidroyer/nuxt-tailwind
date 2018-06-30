@@ -1,9 +1,10 @@
 <template>
 <div class="container px-4 mx-auto max-w-xl">
   <IntroBlock :tag="1" text="Blog">Here is where the main blog page will be for all the posts in information.</IntroBlock>
-  <ul class="my-6 py-4 post-list flex flex-wrap justify-between">
-    <li v-for="(post, index) in posts" :key="index" class="mx-4 my-4">
+  <ul class="my-6 py-4 post-list flex flex-wrap">
+    <li v-for="(post, index) in posts" :key="index" class="post-list-item max-w-sm rounded overflow-hidden shadow-sm mx-4 my-6 p-4 border-2 border-grey-light">
       <nuxt-link class="font-semibold" :to="post.permalink">{{ post.title }}</nuxt-link>
+      <p class="mt-2 mb-4" v-text="post.description"></p>
       <div class="tags flex">
         <div class="tag text-sm mr-4" v-for="(postTag, index) in post.tags" :key="index">
           <nuxt-link class="tag-link no-underline font-bold" :to="'/tags/' + postTag | slugify">

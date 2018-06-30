@@ -1,10 +1,10 @@
 <template>
-  <main-wrapper>
+  <main-wrapper class="post">
     <nuxt-link to="/">Home</nuxt-link> /
     <nuxt-link to="/blog">Blog</nuxt-link> /
     {{ post.linktitle }}
     <h1 class="post-title">{{ post.title }} </h1>
-    <nuxtent-body class="content" :body="post.body" />
+    <nuxtent-body class="content post-content" :body="post.body" />
   </main-wrapper>
 </template>
 
@@ -53,7 +53,7 @@ pre[class*="language-"] {
   background-color: #282c34;
 }
 
-.content code {
+.post-content code {
   color: #476582;
   padding: 0.25rem 0.5rem;
   margin: 0;
@@ -62,7 +62,7 @@ pre[class*="language-"] {
   border-radius: 3px;
 }
 
-.content code[class*="language-"],
+.post-content code[class*="language-"],
 pre[class*="language-"] code {
   color: #f1f1f1 !important;
 }

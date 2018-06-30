@@ -1,8 +1,7 @@
 ---
 title: "Using Firebase Auth With Nuxt.js"
 subtitle: Part 1
-publishDate: "2017-10-11"
-date: "2017-10-11"
+description: This article is an overview of using Nuxt.js with Firebase Authentication. Learn how to check for admin access in your routes and use Vuex with Nuxt.js and Firebase to keep everything manageable.
 tags:
   - vue
   - nuxt
@@ -103,14 +102,10 @@ A user is already signed-in and the next route is `/login`
 
 _Redirect to `/admin`_
 
-<br>
-
 **Scenario 2:**
 There is not a user signed-in and the next route is `/admin` or a sub-route such as, `/admin/settings`
 
 _Redirect to `/login`_
-
-<br>
 
 This functions checks for the 2 scenarios:
 
@@ -129,8 +124,6 @@ function isAdminRoute(route) {
 }
 ```
 
-<br>
-
 We will tell Nuxt.js to use this file by declaring it in `nuxt.config.js` as follows:
 
 ```js
@@ -138,7 +131,5 @@ router: {
   middleware: "router-auth";
 }
 ```
-
-<br>
 
 With all of this in place, we are able to use Firebase Authentication with Nuxt.js to protect the `/admin` route as well as child routes such as `/admin/settings`.
