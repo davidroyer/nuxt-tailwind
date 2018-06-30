@@ -1,5 +1,11 @@
 const Prism = require("prismjs");
-var loadLanguages = require("prismjs/components/index.js");
+const loadLanguages = require("prismjs/components/index.js");
+// const markdownPlugins = {
+//   attrs: require("markdown-it-attrs"),
+//   figures: [require("markdown-it-implicit-figures"), { figcaption: true }],
+//   video: require("markdown-it-video")
+// };
+
 loadLanguages(["json"]);
 
 module.exports = {
