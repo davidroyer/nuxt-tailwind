@@ -62,6 +62,9 @@ pre {
   white-space: pre-wrap;
 }
 
-code {
+code,
+a,
+p,
+li {
   word-wrap: break-word;
 }
