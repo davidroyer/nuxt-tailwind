@@ -1,6 +1,6 @@
 {
   "name": "nuxt-tailwind",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nuxt.js project",
   "author": "David Royer <droyer01@gmail.com>",
   "private": true,
