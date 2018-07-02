@@ -20,7 +20,8 @@ const purgecssWhitelistPatterns = [
   /^scale/,
   /^enter/,
   /^leave/,
-  /^custom-block/
+  /^custom-block/,
+  /^custom-block-/
 ];
 
 module.exports = {
