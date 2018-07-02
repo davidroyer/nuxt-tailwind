@@ -153,7 +153,7 @@ module.exports = {
                 extensions: ["html", "js", "vue", "css"]
               }
             ],
-            whitelist: ["html", "body", "ol"],
+            whitelist: ["html", "body", "ol", "tip", "warning", "danger"],
             whitelistPatterns: purgecssWhitelistPatterns
           })
         );
