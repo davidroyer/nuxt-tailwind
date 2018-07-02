@@ -19,6 +19,8 @@
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/sitemap": "^0.1.1",
     "autoprefixer": "^8.0.0",
+    "markdown-it-container": "^2.0.0",
+    "markdown-it-link-attributes": "^2.1.0",
     "nuxt": "^1.0.0",
     "nuxt-fontawesome": "^0.2.0",
     "nuxtent": "^1.4.1",

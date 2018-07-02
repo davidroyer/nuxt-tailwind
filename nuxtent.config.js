@@ -1,5 +1,7 @@
 const Prism = require("prismjs");
 const loadLanguages = require("prismjs/components/index.js");
+const externalLinks = require("markdown-it-link-attributes");
+const container = require("markdown-it-container");
 // const markdownPlugins = {
 //   attrs: require("markdown-it-attrs"),
 //   figures: [require("markdown-it-implicit-figures"), { figcaption: true }],
@@ -7,6 +9,28 @@ const loadLanguages = require("prismjs/components/index.js");
 // };
 
 loadLanguages(["json"]);
+
+function createContainer(klass, defaultTitle) {
+  return [
+    container,
+    klass,
+    {
+      render(tokens, idx) {
+        const token = tokens[idx];
+        const info = token.info
+          .trim()
+          .slice(klass.length)
+          .trim();
+        if (token.nesting === 1) {
+          return `<div class="${klass} custom-block"><p class="custom-block-title">${info ||
+            defaultTitle}</p>\n`;
+        } else {
+          return `</div>\n`;
+        }
+      }
+    }
+  ];
+}
 
 module.exports = {
   content: [
@@ -41,7 +65,14 @@ module.exports = {
             Prism.languages[lang] || Prism.languages.markup
           )}</code></pre>`;
         };
-      }
+      },
+      plugins: [
+        container,
+        createContainer("tip", "TIP"),
+        createContainer("warning", "WARNING"),
+        createContainer("danger", "DANGER"),
+        [externalLinks, { target: "_blank", rel: "noopener" }]
+      ]
     }
   },
 
