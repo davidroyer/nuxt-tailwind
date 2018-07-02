@@ -10,28 +10,6 @@ const container = require("markdown-it-container");
 
 loadLanguages(["json"]);
 
-function createContainer(klass, defaultTitle) {
-  return [
-    container,
-    klass,
-    {
-      render(tokens, idx) {
-        const token = tokens[idx];
-        const info = token.info
-          .trim()
-          .slice(klass.length)
-          .trim();
-        if (token.nesting === 1) {
-          return `<div class="${klass} custom-block"><p class="custom-block-title">${info ||
-            defaultTitle}</p>\n`;
-        } else {
-          return `</div>\n`;
-        }
-      }
-    }
-  ];
-}
-
 module.exports = {
   content: [
     [
@@ -67,7 +45,6 @@ module.exports = {
         };
       },
       plugins: [
-        container,
         createContainer("tip", "TIP"),
         createContainer("warning", "WARNING"),
         createContainer("danger", "DANGER"),
@@ -85,3 +62,31 @@ module.exports = {
     };
   }
 };
+
+/**
+ * Helper Function to create HTML for custom containers for markdown
+ * @param  {[type]} klass        [description]
+ * @param  {[type]} defaultTitle [description]
+ * @return {[type]}              [description]
+ */
+function createContainer(klass, defaultTitle) {
+  return [
+    container,
+    klass,
+    {
+      render(tokens, idx) {
+        const token = tokens[idx];
+        const info = token.info
+          .trim()
+          .slice(klass.length)
+          .trim();
+        if (token.nesting === 1) {
+          return `<div class="${klass} custom-block"><p class="custom-block-title">${info ||
+            defaultTitle}</p>\n`;
+        } else {
+          return `</div>\n`;
+        }
+      }
+    }
+  ];
+}
