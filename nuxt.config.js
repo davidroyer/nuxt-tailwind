@@ -19,7 +19,8 @@ const purgecssWhitelistPatterns = [
   /^nuxt/,
   /^scale/,
   /^enter/,
-  /^leave/
+  /^leave/,
+  /^custom-block/
 ];
 
 module.exports = {
