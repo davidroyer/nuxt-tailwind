@@ -39,6 +39,8 @@
     "lodash": "^4.17.10",
     "node-sass": "^4.9.0",
     "purgecss-webpack-plugin": "^1.2.0",
-    "sass-loader": "^7.0.3"
+    "sass-loader": "^7.0.3",
+    "typography": "^0.16.17",
+    "typography-theme-github": "^0.15.10"
   }
 }

@@ -5,7 +5,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const baseUrl = isProduction
   ? "https://nuxtent--nuxt-tailwind.netlify.com"
   : "http://localhost:3000";
-
+const tailwind = require("./tailwind");
 class TailwindExtractor {
   static extract(content) {
     return content.match(/[A-z0-9-:/]+/g) || [];
@@ -67,7 +67,7 @@ module.exports = {
    ** Customize the progress bar color
    */
   loading: {
-    color: "#6574cd"
+    color: tailwind.colors["red"]
   },
 
   /**

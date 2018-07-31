@@ -2,15 +2,14 @@
 title: Tips After Building a Site with Nuxt.js
 description: A few simple tips for anyone using Nuxt.js. This includes covering how to handle mobile menu state once a link is choosen from the menu and making sure to close the menu when appropriate.
 tags:
-  - vue
-  - nuxt
+
+* vue
+* nuxt
 ---
 
 # Tip 1 - Learn Vuex
 
 I put off on learning Vuex for a long time, and used simpler ways of handling global state. When I took the time to understand Vuex though, it paid off greatly when working with Nuxt.js.
-
----
 
 # Tip 2 - Using Middleware for Mobile Menus
 
@@ -19,7 +18,6 @@ When a link was clicked using the mobile menu, it would stay open instead of clo
 A couple things needed to happen to accomplish this. (_Disclaimer: I am using Vuex for state management_)
 
 1. Use Vuex to keep track of my menu state.
-
 
 ```js
 state: {
@@ -33,7 +31,6 @@ mutations: {
 ```
 
 2. Add a function to the `middleware` directory. It checks if the menu is active. If so, toggle that state (making it inactive).
-
 
 ```js
 // This is `middleware/menu.js`
@@ -52,8 +49,6 @@ router: {
   middleware: "menu";
 }
 ```
-
----
 
 # Tip 3 - Performance
 
