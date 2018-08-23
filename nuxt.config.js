@@ -2,6 +2,7 @@ const path = require('path')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const glob = require('glob-all')
 const config = require('./website.config')
+const axios = require('axios')
 
 class TailwindExtractor {
   static extract(content) {
@@ -219,6 +220,33 @@ module.exports = {
   },
 
   generate: {
-    fallback: true
+    fallback: true,
+    interval: 1000,
+    routes() {
+      return Promise.all([
+        axios.get(`http://admin.theartinmotion.com/wp-json/wp/v2/posts?per_page=10`),
+        axios.get(`http://admin.theartinmotion.com/wp-json/wp/v2/pages?per_page=10`)
+      ]).then(data => {
+        const posts = data[0]
+        const pages = data[1]
+        console.log('Posts: ', posts)
+        console.log('Pages: ', pages)
+        return posts.data
+          .map(post => {
+            return {
+              route: '/articles/' + post.slug,
+              payload: post
+            }
+          })
+          .concat(
+            pages.data.map(page => {
+              return {
+                route: page.slug,
+                payload: page
+              }
+            })
+          )
+      })
+    }
   }
 }
