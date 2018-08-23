@@ -6,6 +6,7 @@ export const state = () => ({
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Blog', path: '/blog' },
+    { name: 'Articles', path: '/articles' },
     { name: 'Examples', path: '/examples' },
     { name: 'Contact', path: '/contact' }
   ],

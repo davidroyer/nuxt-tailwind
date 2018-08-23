@@ -9,8 +9,12 @@
 
 <script>
 export default {
-  async asyncData({ app, store, params }) {
-    let pageArray = await app.$wp.pages().slug(params.slug)
+  async asyncData({ app, store, params, payload }) {
+    let pageArray
+
+    if (payload) pageArray = payload
+    else pageArray = await app.$wp.pages().slug(params.slug)
+
     return {
       page: pageArray[0]
     }

@@ -4,6 +4,11 @@
       <v-headline class="relative px-4 text-6xl font-light text-center text-white" :tag="1">Front End Web Developer</v-headline>
     </v-hero>
 
+    <div class="posts">
+      <div class="post" v-for="(post, index) in posts" :key="index">
+        <h3><nuxt-link :to="`/articles/${post.slug}`" v-html="post.title.rendered"></nuxt-link></h3>
+      </div>
+    </div>
     <v-wrapper>
       <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellat aut accusantium, ducimus eos. Aperiam fugit rerum esse at quis ducimus ipsum perspiciatis inventore doloribus provident quidem reiciendis, laudantium ad iure nam quod, repudiandae eveniet, sed soluta eaque! Sapiente possimus impedit ullam, dolor voluptatibus. Magni repellat aperiam dolores ipsam provident!</p>
@@ -63,33 +68,41 @@
 </template>
 
 <script>
+import wp from '~/lib/wp'
 const metaDescription =
-  "Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.";
+  'Examples demonstrating the features of this Nuxt.js starter template including the Global Component Library bundled with this starter template, which is made up components for icons, inputs, sidebars, and more.'
 
 export default {
+  async asyncData({ params }) {
+    let { pages } = await wp.pages()
+    let { posts } = await wp.posts()
+    let { site_data } = await wp.siteData()
+    let { fullSiteData } = await wp.fullSiteData()
+    return { site_data, fullSiteData, pages, posts }
+  },
   head() {
     return {
-      title: "Examples",
+      title: 'Examples',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: metaDescription
         },
         {
-          hid: "og:description",
-          property: "og:description",
+          hid: 'og:description',
+          property: 'og:description',
           content: metaDescription
         }
       ]
-    };
+    }
   },
   methods: {
     handleClick() {
-      alert("You did something.");
+      alert('You did something.')
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -108,7 +121,7 @@ section {
   }
 }
 .hero {
-  background-image: url("~/assets/images/blog-me.jpeg");
+  background-image: url('~/assets/images/blog-me.jpeg');
 }
 
 .sidebar-close {
