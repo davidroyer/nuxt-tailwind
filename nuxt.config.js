@@ -221,7 +221,7 @@ module.exports = {
 
   generate: {
     fallback: true,
-    interval: 1000,
+    // interval: 1000,
     routes() {
       return Promise.all([
         axios.get(`http://admin.theartinmotion.com/wp-json/wp/v2/posts?per_page=10`),

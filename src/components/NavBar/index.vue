@@ -1,6 +1,11 @@
 <template>
     <div class="navbar">
-      <logo></logo>
+      <!-- <logo></logo> -->
+      <div class="site-logo">
+        <h1 class="site-title"><nuxt-link to="/" v-html="siteTitle"></nuxt-link></h1>
+        <!-- <h1 v-html="siteTitle"></h1> -->
+        <p class="site-description" v-html="siteDescription"></p>
+      </div>
       <button
         @click="$store.commit('toggleMenuState')"
         v-text="navButtonText"
@@ -20,11 +25,11 @@
 </template>
 
 <script>
-import NavLinks from "./NavLinks";
-import Logo from "./Logo";
+import NavLinks from './NavLinks'
+import Logo from './Logo'
 
 export default {
-  name: "NavBar",
+  name: 'NavBar',
   components: {
     NavLinks,
     Logo
@@ -37,46 +42,76 @@ export default {
 
   computed: {
     navLinksArray() {
-      return this.$store.state.navLinks;
+      return this.$store.state.navLinks
+    },
+
+    siteTitle() {
+      return this.$store.getters.siteTitle
+    },
+
+    siteDescription() {
+      return this.$store.getters.siteDescription
     },
 
     mobileMenuIsActive() {
-      return this.$store.state.menuIsActive;
+      return this.$store.state.menuIsActive
     },
 
     navButtonText() {
-      return this.mobileMenuIsActive ? "Close" : "Menu";
+      return this.mobileMenuIsActive ? 'Close' : 'Menu'
     },
 
     isMobile() {
-      return this.windowWidth <= 767;
+      return this.windowWidth <= 767
     }
   },
 
   mounted() {
     this.$nextTick(function() {
-      window.addEventListener("resize", this.getWindowWidth);
-      window.addEventListener("resize", this.getWindowHeight);
+      window.addEventListener('resize', this.getWindowWidth)
+      window.addEventListener('resize', this.getWindowHeight)
 
       //Init
-      this.getWindowWidth();
-      this.getWindowHeight();
-    });
+      this.getWindowWidth()
+      this.getWindowHeight()
+    })
   },
 
   methods: {
     getWindowWidth(event) {
-      this.windowWidth = document.documentElement.clientWidth;
+      this.windowWidth = document.documentElement.clientWidth
     },
 
     getWindowHeight(event) {
-      this.windowHeight = document.documentElement.clientHeight;
+      this.windowHeight = document.documentElement.clientHeight
     }
   },
 
   beforeDestroy() {
-    window.removeEventListener("resize", this.getWindowWidth);
-    window.removeEventListener("resize", this.getWindowHeight);
+    window.removeEventListener('resize', this.getWindowWidth)
+    window.removeEventListener('resize', this.getWindowHeight)
   }
-};
+}
 </script>
+
+<style lang="scss">
+.site {
+  &-logo {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 0.5rem;
+  }
+  &-title {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &-description {
+    margin: 0;
+    margin-top: -0.5rem;
+  }
+}
+</style>
