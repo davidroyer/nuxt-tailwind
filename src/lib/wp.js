@@ -5,11 +5,22 @@ class WpApi {
     this.apiBase = `${siteurl}/wp-json`
   }
 
-  post(postSlug) {
+  post(slug) {
     return axios
-      .get(`${this.apiBase}/wp/v2/posts/?slug=${postSlug}`)
+      .get(`${this.apiBase}/wp/v2/posts/?slug=${slug}`)
       .then(json => {
         return { post: json.data[0] }
+      })
+      .catch(e => {
+        return { error: e }
+      })
+  }
+
+  page(slug) {
+    return axios
+      .get(`${this.apiBase}/wp/v2/pages/?slug=${slug}`)
+      .then(json => {
+        return { page: json.data[0] }
       })
       .catch(e => {
         return { error: e }
@@ -62,7 +73,7 @@ class WpApi {
       .get(this.apiBase)
       .then(json => {
         const { name, description, url, home, gmt_offset, timezone_string } = json.data
-        return { site_data: { name, description, url, home, gmt_offset, timezone_string } }
+        return { siteData: { name, description, url, home, gmt_offset, timezone_string } }
       })
       .catch(e => ({ error: e }))
   }

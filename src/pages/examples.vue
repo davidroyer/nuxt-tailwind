@@ -76,9 +76,9 @@ export default {
   async asyncData({ params }) {
     let { pages } = await wp.pages()
     let { posts } = await wp.posts()
-    let { site_data } = await wp.siteData()
+    let { siteData } = await wp.siteData()
     let { fullSiteData } = await wp.fullSiteData()
-    return { site_data, fullSiteData, pages, posts }
+    return { siteData, fullSiteData, pages, posts }
   },
   head() {
     return {

@@ -10,21 +10,19 @@
 </template>
 
 <script>
-export default {
-  async asyncData({ app, store, params, payload }) {
-    let pageArray
+import wp from '~/lib/wp'
 
+export default {
+  async asyncData({ params, payload }) {
     if (payload) return { page: payload }
     else {
-      pageArray = await app.$wp.pages().slug(params.slug)
-      return {
-        page: pageArray[0]
-      }
+      let { page } = await wp.page(params.slug)
+      return { page }
     }
   },
   head() {
     return {
-      title: 'Catch Patch'
+      title: this.page.title.rendered
     }
   }
 }

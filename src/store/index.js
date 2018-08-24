@@ -3,7 +3,7 @@ import wp from '~/lib/wp'
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
-  site_data: { test: 'SOMETHING' },
+  siteData: { test: 'SOMETHING' },
   testValue: 'Initial',
   navLinks: [
     { name: 'Home', path: '/' },
@@ -38,16 +38,16 @@ export const mutations = {
   },
 
   setSiteData(state, payload) {
-    state.site_data = payload
+    state.siteData = payload
   }
 }
 
 export const actions = {
   async nuxtServerInit({ commit, state }, context) {
-    const { site_data } = await wp.siteData()
-    console.log('site_data: ', site_data)
+    const { siteData } = await wp.siteData()
+    console.log('siteData: ', siteData)
 
-    commit('setSiteData', site_data)
+    commit('setSiteData', siteData)
   },
   async promiseTest({ commit }, payload) {
     await delay(1200)
@@ -55,16 +55,16 @@ export const actions = {
   }
 
   // async getSiteInfo() {
-  //   const { site_data } = await wp.site_data()
-  //   commit('setSiteData', site_data)
+  //   const { siteData } = await wp.siteData()
+  //   commit('setSiteData', siteData)
   // }
 }
 
 export const getters = {
   currentPost: state => state.post,
-  siteHome: state => state.site_data.home,
-  siteTitle: state => state.site_data.name,
-  siteDescription: state => state.site_data.description
+  siteHome: state => state.siteData.home,
+  siteTitle: state => state.siteData.name,
+  siteDescription: state => state.siteData.description
 }
 
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms))

@@ -13,21 +13,12 @@
 import wp from '~/lib/wp'
 
 export default {
-  // async asyncData ({ params, error, payload }) {
-  //   if (payload) return { user: payload }
-  //   else return { user: await backend.fetchUser(params.id) }
-  // }
-
-  async asyncData({ app, store, params, payload }) {
-    let dataArray
-    let { post } = await wp.post(params.slug)
-
-    if (payload) return { article: payload, post }
+  async asyncData({ params, payload }) {
+    if (payload) return { article: payload }
     else {
-      dataArray = await app.$wp.posts().slug(params.slug)
+      let { post } = await wp.post(params.slug)
       return {
-        article: dataArray[0],
-        post
+        article: post
       }
     }
   },

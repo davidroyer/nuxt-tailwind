@@ -229,8 +229,6 @@ module.exports = {
       ]).then(data => {
         const posts = data[0]
         const pages = data[1]
-        console.log('Posts: ', posts)
-        console.log('Pages: ', pages)
         return posts.data
           .map(post => {
             return {
