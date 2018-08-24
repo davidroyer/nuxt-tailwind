@@ -1,75 +1,45 @@
 import axios from 'axios'
-let menusApiUrl = 'http://admin.theartinmotion.com/wp-json/menus/v1/menus/top'
+const menuApiPath = 'menus/v1/menus/top'
+
 class WpApi {
   constructor(siteurl) {
     this.apiBase = `${siteurl}/wp-json`
-    this.menuItemsUrl = `${this.apiBase}/menus/v1/menus/top`
+    this.menuItemsUrl = `${this.apiBase}/${menuApiPath}`
   }
 
-  menu() {
-    return axios
-      .get(this.menuItemsUrl)
-      .then(json => {
-        console.log('NAV: ', json.data)
-        return { menu: json.data }
-      })
-      .catch(e => {
-        return { error: e }
-      })
+  async menu() {
+    const { data } = await axios.get(`${this.apiBase}/${menuApiPath}`)
+    return { menu: data }
   }
 
-  post(slug) {
-    return axios
-      .get(`${this.apiBase}/wp/v2/posts/?slug=${slug}`)
-      .then(json => {
-        return { post: json.data[0] }
-      })
-      .catch(e => {
-        return { error: e }
-      })
+  async post(slug) {
+    const { data } = await axios.get(`${this.apiBase}/wp/v2/posts/?slug=${slug}`)
+    return { post: data[0] }
   }
 
-  page(slug) {
-    return axios
-      .get(`${this.apiBase}/wp/v2/pages/?slug=${slug}`)
-      .then(json => {
-        return { page: json.data[0] }
-      })
-      .catch(e => {
-        return { error: e }
-      })
+  async page(slug) {
+    const { data } = await axios.get(`${this.apiBase}/wp/v2/pages/?slug=${slug}`)
+    return { page: data[0] }
   }
 
-  posts() {
-    return axios
-      .get(`${this.apiBase}/wp/v2/posts`, {
-        params: {
-          page: 1,
-          per_page: 5
-        }
-      })
-      .then(json => {
-        return { posts: json.data }
-      })
-      .catch(e => {
-        return { error: e }
-      })
+  async posts() {
+    const { data } = await axios.get(`${this.apiBase}/wp/v2/posts/?slug=${slug}`, {
+      params: {
+        page: 1,
+        per_page: 5
+      }
+    })
+    return { posts: data }
   }
 
-  pages() {
-    return axios
-      .get(`${this.apiBase}/wp/v2/pages`, {
-        params: {
-          page: 1,
-          per_page: 5
-        }
-      })
-      .then(json => {
-        return { pages: json.data }
-      })
-      .catch(e => {
-        return { error: e }
-      })
+  async pages() {
+    const { data } = await axios.get(`${this.apiBase}/wp/v2/pages`, {
+      params: {
+        page: 1,
+        per_page: 10
+      }
+    })
+    return { pages: data }
   }
 
   fullSiteData() {

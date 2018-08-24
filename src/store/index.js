@@ -51,7 +51,6 @@ export const actions = {
   async nuxtServerInit({ commit, state }, context) {
     const { siteData } = await wp.siteData()
     const { menu } = await wp.menu()
-    console.log(menu)
     commit('setSiteData', siteData)
     commit('setMenu', menu)
   },
