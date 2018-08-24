@@ -17,10 +17,28 @@
 
       <template v-if="isMobile">
         <transition name="scale">
-          <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links>
+          <nav id="nav-mobile" v-show="mobileMenuIsActive" class="nav">
+            <ul class="nav-list">
+              <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
+                <nuxt-link class="nav-link" :to="handleSlug(item)">
+                  <span v-html="item.title" class="nav-link-text"></span>
+                </nuxt-link>
+              </li>
+            </ul>
+          </nav>
+          <!-- <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links> -->
         </transition>
       </template>
-      <nav-links v-if="!isMobile" :links="navLinksArray"></nav-links>
+      <nav v-if="!isMobile" class="nav">
+        <ul class="nav-list">
+          <li class="nav-item" v-for="(item, index) in menuItems" :key="index">
+            <nuxt-link class="nav-link" :to="handleSlug(item)">
+              <span v-html="item.title" class="nav-link-text"></span>
+            </nuxt-link>
+          </li>
+        </ul>
+      </nav>
+      <!-- <nav-links v-if="!isMobile" :links="navLinksArray"></nav-links> -->
     </div>
 </template>
 
@@ -43,6 +61,10 @@ export default {
   computed: {
     navLinksArray() {
       return this.$store.state.navLinks
+    },
+
+    menuItems() {
+      return this.$store.getters.menuItems
     },
 
     siteTitle() {
@@ -78,6 +100,13 @@ export default {
   },
 
   methods: {
+    handleSlug(menuItem) {
+      const { url } = menuItem
+      const siteUrl = `${this.$store.state.siteData.home}/`
+      if (url === this.$store.state.siteData.home) return '/'
+      else return url.replace(siteUrl, '/')
+    },
+
     getWindowWidth(event) {
       this.windowWidth = document.documentElement.clientWidth
     },

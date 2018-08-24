@@ -3,8 +3,9 @@ import wp from '~/lib/wp'
 export const state = () => ({
   menuIsActive: false,
   sidebarOpen: false,
-  siteData: { test: 'SOMETHING' },
+  siteData: {},
   testValue: 'Initial',
+  menu: {},
   navLinks: [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -39,29 +40,32 @@ export const mutations = {
 
   setSiteData(state, payload) {
     state.siteData = payload
+  },
+
+  setMenu(state, payload) {
+    state.menu = payload
   }
 }
 
 export const actions = {
   async nuxtServerInit({ commit, state }, context) {
     const { siteData } = await wp.siteData()
-    console.log('siteData: ', siteData)
-
+    const { menu } = await wp.menu()
+    console.log(menu)
     commit('setSiteData', siteData)
+    commit('setMenu', menu)
   },
+
   async promiseTest({ commit }, payload) {
     await delay(1200)
     commit('setTestValue', 'New Value')
   }
-
-  // async getSiteInfo() {
-  //   const { siteData } = await wp.siteData()
-  //   commit('setSiteData', siteData)
-  // }
 }
 
 export const getters = {
   currentPost: state => state.post,
+  menuItems: state => state.menu.items,
+  siteData: state => state.siteData,
   siteHome: state => state.siteData.home,
   siteTitle: state => state.siteData.name,
   siteDescription: state => state.siteData.description

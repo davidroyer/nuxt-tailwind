@@ -1,8 +1,21 @@
 import axios from 'axios'
-
+let menusApiUrl = 'http://admin.theartinmotion.com/wp-json/menus/v1/menus/top'
 class WpApi {
   constructor(siteurl) {
     this.apiBase = `${siteurl}/wp-json`
+    this.menuItemsUrl = `${this.apiBase}/menus/v1/menus/top`
+  }
+
+  menu() {
+    return axios
+      .get(this.menuItemsUrl)
+      .then(json => {
+        console.log('NAV: ', json.data)
+        return { menu: json.data }
+      })
+      .catch(e => {
+        return { error: e }
+      })
   }
 
   post(slug) {
