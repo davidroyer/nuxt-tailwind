@@ -16,14 +16,10 @@ import wp from '~/lib/wp'
 
 export default {
   async asyncData({ app, store, params }) {
-    const ip = await app.$axios.$get('http://icanhazip.com')
-    const testPages = await app.$axios.$get('/api/wp/v2/pages')
     const { posts } = await wp.posts()
     const { pages } = await wp.pages()
 
     return {
-      ip,
-      testPages,
       pages,
       articles: posts
     }
