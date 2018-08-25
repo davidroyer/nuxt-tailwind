@@ -24,6 +24,9 @@
                   <span v-html="item.title" class="nav-link-text"></span>
                 </nuxt-link>
               </li>
+              <li>
+                <nuxt-link to="/tests">Tests</nuxt-link>
+              </li>
             </ul>
           </nav>
           <!-- <nav-links id="nav-mobile" v-show="mobileMenuIsActive" :links="navLinksArray"></nav-links> -->
@@ -35,6 +38,9 @@
             <nuxt-link class="nav-link" :to="handleSlug(item)">
               <span v-html="item.title" class="nav-link-text"></span>
             </nuxt-link>
+          </li>
+          <li>
+            <nuxt-link to="/tests">Tests</nuxt-link>
           </li>
         </ul>
       </nav>

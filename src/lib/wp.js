@@ -23,10 +23,10 @@ class WpApi {
   }
 
   async posts() {
-    const { data } = await axios.get(`${this.apiBase}/wp/v2/posts/?slug=${slug}`, {
+    const { data } = await axios.get(`${this.apiBase}/wp/v2/posts`, {
       params: {
         page: 1,
-        per_page: 5
+        per_page: 10
       }
     })
     return { posts: data }

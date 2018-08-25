@@ -12,11 +12,13 @@
 </template>
 
 <script>
+import wp from '~/lib/wp'
+
 export default {
   async asyncData({ app, store, params }) {
+    const { posts } = await wp.posts()
     return {
-      // settings: await app.$wp.settings(),
-      articles: await app.$wp.posts().perPage(10)
+      articles: posts
     }
   },
   head() {

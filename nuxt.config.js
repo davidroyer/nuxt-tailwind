@@ -114,15 +114,24 @@ module.exports = {
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
     '@nuxtjs/pwa',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
     // With options
-    [
-      'wp-nuxt',
-      {
-        endpoint: 'http://admin.theartinmotion.com/wp-json/'
-        /*other options of WP-API */
-      }
-    ]
+    // [
+    //   'wp-nuxt',
+    //   {
+    //     endpoint: 'http://admin.theartinmotion.com/wp-json/'
+    //     /*other options of WP-API */
+    //   }
+    // ]
   ],
+  proxy: {
+    '/api/': {
+      target: 'http://admin.theartinmotion.com/wp-json/',
+      pathRewrite: { '^/api/': '' },
+      secure: false
+    }
+  },
 
   /**
    * PWA Manifest
