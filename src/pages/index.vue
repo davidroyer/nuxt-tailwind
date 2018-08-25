@@ -14,7 +14,7 @@
 <script>
 export default {
   async asyncData({ app }) {
-    console.log(app.$wp)
+    console.log('app.$wp: ', app.$wp)
     const { posts } = await app.$wp.posts()
     const { pages } = await app.$wp.pages()
 
