@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  async asyncData({ params, payload }) {
+  async asyncData({ app, params, payload }) {
     if (payload) return { page: payload }
     else {
       let { page } = await app.$wp.page(params.slug)
