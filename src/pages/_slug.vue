@@ -10,13 +10,11 @@
 </template>
 
 <script>
-import wp from '~/lib/wp'
-
 export default {
   async asyncData({ params, payload }) {
     if (payload) return { page: payload }
     else {
-      let { page } = await wp.page(params.slug)
+      let { page } = await app.$wp.page(params.slug)
       return { page }
     }
   },

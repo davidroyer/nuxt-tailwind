@@ -104,7 +104,7 @@ module.exports = {
    * Custom Nuxt plugins
    * @see https://nuxtjs.org/guide/plugins
    */
-  plugins: ['~/plugins/global-components'],
+  plugins: ['~/plugins/global-components', '~/plugins/wp'],
 
   /**
    * Custom Nuxt modules

@@ -62,6 +62,4 @@ class WpApi {
   }
 }
 
-const wp = new WpApi('http://admin.theartinmotion.com')
-
-export default wp
+export default WpApi
